@@ -30,6 +30,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shaders", "Shaders", "{0454
 		Assets\Shaders\DoTexturing.fx = Assets\Shaders\DoTexturing.fx
 		Assets\Shaders\DoTransform.fx = Assets\Shaders\DoTransform.fx
 		Assets\Shaders\SimpleDraw.fx = Assets\Shaders\SimpleDraw.fx
+		Assets\Shaders\Standard.fx = Assets\Shaders\Standard.fx
 	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Input", "Framework\Input\Input.vcxproj", "{3629F01A-6FED-42EB-B308-E9F7F1346EAF}"
@@ -49,6 +50,10 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ImGui", "External\ImGui\ImGui.vcxproj", "{52D656A2-A2F4-4C54-A3C7-653427BED1E8}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "07_HelloRenderTarget", "VGP242\07_HelloRenderTarget\07_HelloRenderTarget.vcxproj", "{655FDAF0-D851-44F1-9788-FDEC619C2818}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "VGP330", "VGP330", "{D164FDA5-D8A7-4AAF-9B7E-48041364F61E}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "08_Lighting", "VGP330\08_Lighting\08_Lighting.vcxproj", "{F9142E47-386E-46AE-B93A-5EA9256E02D9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -170,6 +175,14 @@ Global
 		{655FDAF0-D851-44F1-9788-FDEC619C2818}.Release|x64.Build.0 = Release|x64
 		{655FDAF0-D851-44F1-9788-FDEC619C2818}.Release|x86.ActiveCfg = Release|Win32
 		{655FDAF0-D851-44F1-9788-FDEC619C2818}.Release|x86.Build.0 = Release|Win32
+		{F9142E47-386E-46AE-B93A-5EA9256E02D9}.Debug|x64.ActiveCfg = Debug|x64
+		{F9142E47-386E-46AE-B93A-5EA9256E02D9}.Debug|x64.Build.0 = Debug|x64
+		{F9142E47-386E-46AE-B93A-5EA9256E02D9}.Debug|x86.ActiveCfg = Debug|Win32
+		{F9142E47-386E-46AE-B93A-5EA9256E02D9}.Debug|x86.Build.0 = Debug|Win32
+		{F9142E47-386E-46AE-B93A-5EA9256E02D9}.Release|x64.ActiveCfg = Release|x64
+		{F9142E47-386E-46AE-B93A-5EA9256E02D9}.Release|x64.Build.0 = Release|x64
+		{F9142E47-386E-46AE-B93A-5EA9256E02D9}.Release|x86.ActiveCfg = Release|Win32
+		{F9142E47-386E-46AE-B93A-5EA9256E02D9}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -190,70 +203,9 @@ Global
 		{228431E1-BC30-4170-A212-59BD12A4628A} = {0CC862A2-784B-4F17-8D2E-A5C0EA266108}
 		{52D656A2-A2F4-4C54-A3C7-653427BED1E8} = {C5BFC193-0FB4-4593-AE46-FC9EBC8283DA}
 		{655FDAF0-D851-44F1-9788-FDEC619C2818} = {0CC862A2-784B-4F17-8D2E-A5C0EA266108}
+		{F9142E47-386E-46AE-B93A-5EA9256E02D9} = {D164FDA5-D8A7-4AAF-9B7E-48041364F61E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6D0AC193-6F87-4854-B7B1-0619DF878E8F}
-	EndGlobalSection
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 15
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = https://dev.azure.com/dwaine777
-		SccLocalPath0 = .
-		SccProjectUniqueName1 = Framework\\Graphics\\Graphics.vcxproj
-		SccProjectTopLevelParentUniqueName1 = SpringEngine.sln
-		SccProjectName1 = Framework/Graphics
-		SccLocalPath1 = Framework\\Graphics
-		SccProjectUniqueName2 = Framework\\Core\\Core.vcxproj
-		SccProjectTopLevelParentUniqueName2 = SpringEngine.sln
-		SccProjectName2 = Framework/Core
-		SccLocalPath2 = Framework\\Core
-		SccProjectUniqueName3 = Engine\\SpringEngine\\SpringEngine.vcxproj
-		SccProjectTopLevelParentUniqueName3 = SpringEngine.sln
-		SccProjectName3 = Engine/SpringEngine
-		SccLocalPath3 = Engine\\SpringEngine
-		SccProjectUniqueName4 = Framework\\Math\\Math.vcxproj
-		SccProjectTopLevelParentUniqueName4 = SpringEngine.sln
-		SccProjectName4 = Framework/Math
-		SccLocalPath4 = Framework\\Math
-		SccProjectUniqueName5 = VGP242\\01_HelloWindow\\01_HelloWindow.vcxproj
-		SccProjectTopLevelParentUniqueName5 = SpringEngine.sln
-		SccProjectName5 = VGP242/01_HelloWindow
-		SccLocalPath5 = VGP242\\01_HelloWindow
-		SccProjectUniqueName6 = VGP242\\02_HelloShapes\\02_HelloShapes.vcxproj
-		SccProjectTopLevelParentUniqueName6 = SpringEngine.sln
-		SccProjectName6 = VGP242/02_HelloShapes
-		SccLocalPath6 = VGP242\\02_HelloShapes
-		SccProjectUniqueName7 = Framework\\Input\\Input.vcxproj
-		SccProjectTopLevelParentUniqueName7 = SpringEngine.sln
-		SccProjectName7 = Framework/Input
-		SccLocalPath7 = Framework\\Input
-		SccProjectUniqueName8 = VGP242\\03_HelloCube\\03_HelloCube.vcxproj
-		SccProjectTopLevelParentUniqueName8 = SpringEngine.sln
-		SccProjectName8 = VGP242/03_HelloCube
-		SccLocalPath8 = VGP242\\03_HelloCube
-		SccProjectUniqueName9 = VGP242\\04_HelloMeshBuilder\\04_HelloMeshBuilder.vcxproj
-		SccProjectTopLevelParentUniqueName9 = SpringEngine.sln
-		SccProjectName9 = VGP242/04_HelloMeshBuilder
-		SccLocalPath9 = VGP242\\04_HelloMeshBuilder
-		SccProjectUniqueName10 = External\\DirectXTK\\DirectXTK_Desktop_2019.vcxproj
-		SccProjectTopLevelParentUniqueName10 = SpringEngine.sln
-		SccProjectName10 = External/DirectXTK
-		SccLocalPath10 = External\\DirectXTK
-		SccProjectUniqueName11 = VGP242\\05_HelloSimpleDraw\\05_HelloSimpleDraw.vcxproj
-		SccProjectTopLevelParentUniqueName11 = SpringEngine.sln
-		SccProjectName11 = VGP242/05_HelloSimpleDraw
-		SccLocalPath11 = VGP242\\05_HelloSimpleDraw
-		SccProjectUniqueName12 = VGP242\\06_HelloImGui\\06_HelloImGui.vcxproj
-		SccProjectTopLevelParentUniqueName12 = SpringEngine.sln
-		SccProjectName12 = VGP242/06_HelloImGui
-		SccLocalPath12 = VGP242\\06_HelloImGui
-		SccProjectUniqueName13 = External\\ImGui\\ImGui.vcxproj
-		SccProjectTopLevelParentUniqueName13 = SpringEngine.sln
-		SccProjectName13 = External/ImGui
-		SccLocalPath13 = External\\ImGui
-		SccProjectUniqueName14 = VGP242\\07_HelloRenderTarget\\07_HelloRenderTarget.vcxproj
-		SccProjectTopLevelParentUniqueName14 = SpringEngine.sln
-		SccProjectName14 = VGP242/07_HelloRenderTarget
-		SccLocalPath14 = VGP242\\07_HelloRenderTarget
 	EndGlobalSection
 EndGlobal

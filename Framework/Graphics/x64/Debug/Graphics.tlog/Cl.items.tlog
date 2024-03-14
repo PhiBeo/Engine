@@ -1,0 +1,15 @@
+C:\Users\Yarts\Documents\VGP330\Framework\Graphics\Src\BlendState.cpp;C:\Users\Yarts\Documents\VGP330\Framework\Graphics\x64\Debug\BlendState.obj
+C:\Users\Yarts\Documents\VGP330\Framework\Graphics\Src\Camera.cpp;C:\Users\Yarts\Documents\VGP330\Framework\Graphics\x64\Debug\Camera.obj
+C:\Users\Yarts\Documents\VGP330\Framework\Graphics\Src\ConstantBuffer.cpp;C:\Users\Yarts\Documents\VGP330\Framework\Graphics\x64\Debug\ConstantBuffer.obj
+C:\Users\Yarts\Documents\VGP330\Framework\Graphics\Src\DebugUI.cpp;C:\Users\Yarts\Documents\VGP330\Framework\Graphics\x64\Debug\DebugUI.obj
+C:\Users\Yarts\Documents\VGP330\Framework\Graphics\Src\GraphicsSystem.cpp;C:\Users\Yarts\Documents\VGP330\Framework\Graphics\x64\Debug\GraphicsSystem.obj
+C:\Users\Yarts\Documents\VGP330\Framework\Graphics\Src\MeshBuffer.cpp;C:\Users\Yarts\Documents\VGP330\Framework\Graphics\x64\Debug\MeshBuffer.obj
+C:\Users\Yarts\Documents\VGP330\Framework\Graphics\Src\MeshBuilder.cpp;C:\Users\Yarts\Documents\VGP330\Framework\Graphics\x64\Debug\MeshBuilder.obj
+C:\Users\Yarts\Documents\VGP330\Framework\Graphics\Src\PixelShader.cpp;C:\Users\Yarts\Documents\VGP330\Framework\Graphics\x64\Debug\PixelShader.obj
+C:\Users\Yarts\Documents\VGP330\Framework\Graphics\Src\Precompiled.cpp;C:\Users\Yarts\Documents\VGP330\Framework\Graphics\x64\Debug\Precompiled.obj
+C:\Users\Yarts\Documents\VGP330\Framework\Graphics\Src\RenderTarget.cpp;C:\Users\Yarts\Documents\VGP330\Framework\Graphics\x64\Debug\RenderTarget.obj
+C:\Users\Yarts\Documents\VGP330\Framework\Graphics\Src\Sampler.cpp;C:\Users\Yarts\Documents\VGP330\Framework\Graphics\x64\Debug\Sampler.obj
+C:\Users\Yarts\Documents\VGP330\Framework\Graphics\Src\SimpleDraw.cpp;C:\Users\Yarts\Documents\VGP330\Framework\Graphics\x64\Debug\SimpleDraw.obj
+C:\Users\Yarts\Documents\VGP330\Framework\Graphics\Src\SimpleEffect.cpp;C:\Users\Yarts\Documents\VGP330\Framework\Graphics\x64\Debug\SimpleEffect.obj
+C:\Users\Yarts\Documents\VGP330\Framework\Graphics\Src\Texture.cpp;C:\Users\Yarts\Documents\VGP330\Framework\Graphics\x64\Debug\Texture.obj
+C:\Users\Yarts\Documents\VGP330\Framework\Graphics\Src\VertexShader.cpp;C:\Users\Yarts\Documents\VGP330\Framework\Graphics\x64\Debug\VertexShader.obj

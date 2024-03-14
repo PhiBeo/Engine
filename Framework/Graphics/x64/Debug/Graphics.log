@@ -1,0 +1,12 @@
+﻿  MeshBuilder.cpp
+C:\Users\Yarts\Documents\VGP330\Framework\Graphics\Src\MeshBuilder.cpp(247,88): warning C4267: 'argument': conversion from 'size_t' to 'uint32_t', possible loss of data
+  (compiling source file '/Src/MeshBuilder.cpp')
+  
+C:\Users\Yarts\Documents\VGP330\Framework\Graphics\Src\MeshBuilder.cpp(247,62): warning C4267: 'argument': conversion from 'size_t' to 'uint32_t', possible loss of data
+  (compiling source file '/Src/MeshBuilder.cpp')
+  
+  SimpleDraw.cpp
+  SimpleEffect.cpp
+  VertexShader.cpp
+  Generating Code...
+  Graphics.vcxproj -> C:\Users\Yarts\Documents\VGP330\x64\Debug\Graphics.lib
