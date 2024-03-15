@@ -5,8 +5,10 @@ C:\Users\Yarts\Documents\VGP330\Framework\Graphics\Src\DebugUI.cpp;C:\Users\Yart
 C:\Users\Yarts\Documents\VGP330\Framework\Graphics\Src\GraphicsSystem.cpp;C:\Users\Yarts\Documents\VGP330\Framework\Graphics\x64\Debug\GraphicsSystem.obj
 C:\Users\Yarts\Documents\VGP330\Framework\Graphics\Src\MeshBuffer.cpp;C:\Users\Yarts\Documents\VGP330\Framework\Graphics\x64\Debug\MeshBuffer.obj
 C:\Users\Yarts\Documents\VGP330\Framework\Graphics\Src\MeshBuilder.cpp;C:\Users\Yarts\Documents\VGP330\Framework\Graphics\x64\Debug\MeshBuilder.obj
+C:\Users\Yarts\Documents\VGP330\Framework\Graphics\Src\ModelIO.cpp;C:\Users\Yarts\Documents\VGP330\Framework\Graphics\x64\Debug\ModelIO.obj
 C:\Users\Yarts\Documents\VGP330\Framework\Graphics\Src\PixelShader.cpp;C:\Users\Yarts\Documents\VGP330\Framework\Graphics\x64\Debug\PixelShader.obj
 C:\Users\Yarts\Documents\VGP330\Framework\Graphics\Src\Precompiled.cpp;C:\Users\Yarts\Documents\VGP330\Framework\Graphics\x64\Debug\Precompiled.obj
+C:\Users\Yarts\Documents\VGP330\Framework\Graphics\Src\RenderObject.cpp;C:\Users\Yarts\Documents\VGP330\Framework\Graphics\x64\Debug\RenderObject.obj
 C:\Users\Yarts\Documents\VGP330\Framework\Graphics\Src\RenderTarget.cpp;C:\Users\Yarts\Documents\VGP330\Framework\Graphics\x64\Debug\RenderTarget.obj
 C:\Users\Yarts\Documents\VGP330\Framework\Graphics\Src\Sampler.cpp;C:\Users\Yarts\Documents\VGP330\Framework\Graphics\x64\Debug\Sampler.obj
 C:\Users\Yarts\Documents\VGP330\Framework\Graphics\Src\SimpleDraw.cpp;C:\Users\Yarts\Documents\VGP330\Framework\Graphics\x64\Debug\SimpleDraw.obj

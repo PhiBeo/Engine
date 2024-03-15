@@ -28,11 +28,11 @@ void GameState::Initialize()
 	mEarth.material.specular = { 1.0f, 1.0f, 1.0f, 1.0f };
 	mEarth.material.power = 10.0f;
 
-	mCelShadingEffect.Initialize(L"../../Assets/Shaders/Standard.fx");
+	mCelShadingEffect.Initialize(L"../../Assets/Shaders/CelShader.fx");
 	mCelShadingEffect.SetCamera(mCamera);
 	mCelShadingEffect.SetDirectionalLight(mDirectionalLight);
 
-	mStandardEffect.Initialize(L"../../Assets/Shaders/CelShader.fx");
+	mStandardEffect.Initialize(L"../../Assets/Shaders/Standard.fx");
 	mStandardEffect.SetCamera(mCamera);
 	mStandardEffect.SetDirectionalLight(mDirectionalLight);
 

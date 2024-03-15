@@ -1,2 +1,6 @@
-﻿  StandardEffect.cpp
+﻿  ModelIO.cpp
+  RenderObject.cpp
+  SimpleEffect.cpp
+  StandardEffect.cpp
+  Generating Code...
   Graphics.vcxproj -> C:\Users\Yarts\Documents\VGP330\x64\Debug\Graphics.lib

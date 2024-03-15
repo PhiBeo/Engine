@@ -7,17 +7,11 @@
 
 namespace SpringEngine::Graphics
 {
+	struct Model;
 	class RenderObject
 	{
 	public:
-		void Terminate()
-		{
-			meshBuffer.Terminate();
-			diffuseMapId = 0;
-			normalMapId = 0;
-			specMapId = 0;
-			bumpMapId = 0;
-		}
+		void Terminate();
 
 		Transform transform;
 		MeshBuffer meshBuffer;
@@ -28,4 +22,17 @@ namespace SpringEngine::Graphics
 		TextureId specMapId;
 		TextureId bumpMapId;
 	};
+
+	using RenderGroup = std::vector<RenderObject>;
+	[[nodiscard]] RenderGroup CreateRenderGroup(const Model& model);
+	void CleanupRenderGroup(RenderGroup& renderGroup);
+
+	template<class Effect>
+	void DrawRenderGroup(Effect& effect, const RenderGroup& renderGroup)
+	{
+		for (const RenderObject& renderObject : renderGroup)
+		{
+			effect.Render(renderObject);
+		}
+	}
 }
