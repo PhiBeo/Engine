@@ -31,6 +31,7 @@ void App::Run(const AppConfig& config)
 	InputSystem::StaticInitialize(handle);
 	DebugUI::StaticInitialize(handle, false, true);
 	SimpleDraw::StaticInitialize(config.debugDrawLimit);
+	TextureManager::StaticInitialize("../../Assets/Textures");
 
 	ASSERT(mCurrentState, "App -- no app state found");
 	mCurrentState->Initialize();
@@ -72,6 +73,7 @@ void App::Run(const AppConfig& config)
 
 	mCurrentState->Terminate();
 
+	TextureManager::StaticTerminate();
 	SimpleDraw::StaticTerminate();
 	DebugUI::StaticTerminate();
 	InputSystem::StaticTerminate();

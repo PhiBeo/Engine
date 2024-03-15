@@ -1,8 +1,9 @@
 #pragma once
 
+#include "Material.h"
 #include "MeshBuffer.h"
 #include "Transform.h"
-#include "Texture.h"
+#include "TextureManager.h"
 
 namespace SpringEngine::Graphics
 {
@@ -12,11 +13,19 @@ namespace SpringEngine::Graphics
 		void Terminate()
 		{
 			meshBuffer.Terminate();
-			mDiffuseTexture.Terminate();
+			diffuseMapId = 0;
+			normalMapId = 0;
+			specMapId = 0;
+			bumpMapId = 0;
 		}
 
 		Transform transform;
 		MeshBuffer meshBuffer;
-		Texture mDiffuseTexture;
+
+		Material material;
+		TextureId diffuseMapId;
+		TextureId normalMapId;
+		TextureId specMapId;
+		TextureId bumpMapId;
 	};
 }

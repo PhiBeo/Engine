@@ -11,5 +11,7 @@ C:\Users\Yarts\Documents\VGP330\Framework\Graphics\Src\RenderTarget.cpp;C:\Users
 C:\Users\Yarts\Documents\VGP330\Framework\Graphics\Src\Sampler.cpp;C:\Users\Yarts\Documents\VGP330\Framework\Graphics\x64\Debug\Sampler.obj
 C:\Users\Yarts\Documents\VGP330\Framework\Graphics\Src\SimpleDraw.cpp;C:\Users\Yarts\Documents\VGP330\Framework\Graphics\x64\Debug\SimpleDraw.obj
 C:\Users\Yarts\Documents\VGP330\Framework\Graphics\Src\SimpleEffect.cpp;C:\Users\Yarts\Documents\VGP330\Framework\Graphics\x64\Debug\SimpleEffect.obj
+C:\Users\Yarts\Documents\VGP330\Framework\Graphics\Src\StandardEffect.cpp;C:\Users\Yarts\Documents\VGP330\Framework\Graphics\x64\Debug\StandardEffect.obj
 C:\Users\Yarts\Documents\VGP330\Framework\Graphics\Src\Texture.cpp;C:\Users\Yarts\Documents\VGP330\Framework\Graphics\x64\Debug\Texture.obj
+C:\Users\Yarts\Documents\VGP330\Framework\Graphics\Src\TextureManager.cpp;C:\Users\Yarts\Documents\VGP330\Framework\Graphics\x64\Debug\TextureManager.obj
 C:\Users\Yarts\Documents\VGP330\Framework\Graphics\Src\VertexShader.cpp;C:\Users\Yarts\Documents\VGP330\Framework\Graphics\x64\Debug\VertexShader.obj

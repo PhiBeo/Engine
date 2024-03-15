@@ -147,6 +147,8 @@
     <ClInclude Include="Inc\DebugUI.h" />
     <ClInclude Include="Inc\Graphics.h" />
     <ClInclude Include="Inc\GraphicsSystem.h" />
+    <ClInclude Include="Inc\LightTypes.h" />
+    <ClInclude Include="Inc\Material.h" />
     <ClInclude Include="Inc\MeshBuffer.h" />
     <ClInclude Include="Inc\MeshBuilder.h" />
     <ClInclude Include="Inc\MeshTypes.h" />
@@ -158,6 +160,7 @@
     <ClInclude Include="Inc\SimpleEffect.h" />
     <ClInclude Include="Inc\StandardEffect.h" />
     <ClInclude Include="Inc\Texture.h" />
+    <ClInclude Include="Inc\TextureManager.h" />
     <ClInclude Include="Inc\Transform.h" />
     <ClInclude Include="Inc\VertexShader.h" />
     <ClInclude Include="Inc\VertexTypes.h" />
@@ -181,6 +184,7 @@
     <ClCompile Include="Src\SimpleEffect.cpp" />
     <ClCompile Include="Src\StandardEffect.cpp" />
     <ClCompile Include="Src\Texture.cpp" />
+    <ClCompile Include="Src\TextureManager.cpp" />
     <ClCompile Include="Src\VertexShader.cpp" />
   </ItemGroup>
   <ItemGroup>
