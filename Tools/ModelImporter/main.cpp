@@ -27,7 +27,7 @@ std::optional<Arguments> ParseArgs(int argc, char* argv[])
 	Arguments arguments;
 	arguments.inputFileName = argv[argc - 2];
 	arguments.outputFileName = argv[argc - 1];
-	for (int i = 1; i + 2 < argc - 2; ++i)
+	for (int i = 1; i + 2 < argc; ++i)
 	{
 		if (strcmp(argv[i], "-scale") == 0)
 		{

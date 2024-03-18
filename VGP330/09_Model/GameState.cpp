@@ -19,8 +19,8 @@ void GameState::Initialize()
 	mStandardEffect.SetCamera(mCamera);
 	mStandardEffect.SetDirectionalLight(mDirectionalLight);
 
-	ModelIO::LoadModel(L"../../Assets/Models/Character/character.model", mModel);
-	mCharacter = CreateRenderGroup(mModel);
+	ModelId modelId = ModelManager::Get()->LoadModel(L"../../Assets/Models/Character/character.model");
+	mCharacter = CreateRenderGroup(modelId);
 }
 
 void GameState::Terminate()

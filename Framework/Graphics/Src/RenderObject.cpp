@@ -14,6 +14,18 @@ void RenderObject::Terminate()
 	bumpMapId = 0;
 }
 
+RenderGroup SpringEngine::Graphics::CreateRenderGroup(ModelId id)
+{
+	const Model* model = ModelManager::Get()->GetModel(id);
+	ASSERT(model != nullptr, "RenderGroup: ModelId %d is not loaded", id);
+	RenderGroup renderGroup = CreateRenderGroup(*model);
+	for (RenderObject& renderObject : renderGroup)
+	{
+		renderObject.modelId = id;
+	}
+	return renderGroup;
+}
+
 RenderGroup Graphics::CreateRenderGroup(const Model& model)
 {
 	RenderGroup renderGroup;

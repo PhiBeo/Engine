@@ -4,6 +4,7 @@
 #include "MeshBuffer.h"
 #include "Transform.h"
 #include "TextureManager.h"
+#include "ModelManager.h"
 
 namespace SpringEngine::Graphics
 {
@@ -16,6 +17,7 @@ namespace SpringEngine::Graphics
 		Transform transform;
 		MeshBuffer meshBuffer;
 
+		ModelId modelId;
 		Material material;
 		TextureId diffuseMapId;
 		TextureId normalMapId;
@@ -24,6 +26,7 @@ namespace SpringEngine::Graphics
 	};
 
 	using RenderGroup = std::vector<RenderObject>;
+	[[nodiscard]] RenderGroup CreateRenderGroup(ModelId id);
 	[[nodiscard]] RenderGroup CreateRenderGroup(const Model& model);
 	void CleanupRenderGroup(RenderGroup& renderGroup);
 
