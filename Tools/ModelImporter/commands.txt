@@ -1,1 +1,2 @@
--scale 0.01 ../../Assets/Models/Character/character.fbx ../../Assets/Models/Character/character.fbx 
+-scale 0.01 ../../Assets/Models/Character/Swat/Swat.fbx ../../Assets/Models/Character/Swat/Swat.fbx
+-scale 0.01 ../../Assets/Models/Character/Paladin/Paladin.fbx ../../Assets/Models/Character/Paladin/Paladin.fbx

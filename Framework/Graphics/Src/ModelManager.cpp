@@ -41,6 +41,7 @@ ModelId SpringEngine::Graphics::ModelManager::LoadModel(const std::filesystem::p
 		auto& modelPtr = iter->second;
 		modelPtr = std::make_unique<Model>();
 		ModelIO::LoadModel(filePath, *modelPtr);
+		ModelIO::LoadMaterial(filePath, *modelPtr);
 	}
 	return modelId;
 }

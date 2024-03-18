@@ -28,12 +28,30 @@ RenderGroup SpringEngine::Graphics::CreateRenderGroup(ModelId id)
 
 RenderGroup Graphics::CreateRenderGroup(const Model& model)
 {
+	auto TryLoadTexture = [](const auto& textureName) ->TextureId
+		{
+			if (textureName.empty())
+			{
+				return 0;
+			}
+			return TextureManager::Get()->LoadTexture(textureName, false);
+		};
+
 	RenderGroup renderGroup;
 	renderGroup.resize(model.meshData.size());
 	for (const Model::MeshData& meshData : model.meshData)
 	{
 		RenderObject& renderObject = renderGroup.emplace_back();
 		renderObject.meshBuffer.Initialize(meshData.mesh);
+		if (meshData.materialIndex < model.materialData.size())
+		{
+			const Model::MaterialData& materialData = model.materialData[meshData.materialIndex];
+			renderObject.material = materialData.material;
+			renderObject.diffuseMapId = TryLoadTexture(materialData.diffuseMapName);
+			renderObject.specMapId = TryLoadTexture(materialData.specularMapName);
+			renderObject.normalMapId = TryLoadTexture(materialData.normalMapName);
+			renderObject.bumpMapId = TryLoadTexture(materialData.bumpMapName);
+		}
 	}
 	return renderGroup;
 }

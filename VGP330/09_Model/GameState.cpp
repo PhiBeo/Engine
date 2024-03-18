@@ -19,13 +19,27 @@ void GameState::Initialize()
 	mStandardEffect.SetCamera(mCamera);
 	mStandardEffect.SetDirectionalLight(mDirectionalLight);
 
-	ModelId modelId = ModelManager::Get()->LoadModel(L"../../Assets/Models/Character/character.model");
-	mCharacter = CreateRenderGroup(modelId);
+	ModelId modelId = ModelManager::Get()->LoadModel(L"../../Assets/Models/Character/Paladin/Paladin.model");
+	mPaladin = CreateRenderGroup(modelId);
+
+	modelId = ModelManager::Get()->LoadModel(L"../../Assets/Models/Character/Swat/Swat.model");
+	mSwat = CreateRenderGroup(modelId);
+
+	for (auto& renderObject : mPaladin)
+	{
+		renderObject.transform.position.x -= 1.0f;
+	}
+
+	for (auto& renderObject : mSwat)
+	{
+		renderObject.transform.position.x += 1.0f;
+	}
 }
 
 void GameState::Terminate()
 {
-	CleanupRenderGroup(mCharacter);
+	CleanupRenderGroup(mSwat);
+	CleanupRenderGroup(mPaladin);
 	mStandardEffect.Terminate();
 }
 
@@ -37,7 +51,8 @@ void GameState::Update(const float deltaTime)
 void GameState::Render()
 {
 	mStandardEffect.Begin();
-	DrawRenderGroup(mStandardEffect, mCharacter);
+	DrawRenderGroup(mStandardEffect, mPaladin);
+	DrawRenderGroup(mStandardEffect, mSwat);
 	//mStandardEffect.Render(mEarth);
 	mStandardEffect.End();
 }

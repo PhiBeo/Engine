@@ -1,11 +1,3 @@
-﻿  ModelManager.cpp
-  RenderObject.cpp
-C:\Users\Yarts\Documents\VGP330\Framework\Graphics\Src\RenderObject.cpp(20,2): warning C4477: 'snprintf' : format string '%d' requires an argument of type 'int', but variadic argument 4 has type 'SpringEngine::Graphics::ModelId'
-  (compiling source file '/Src/RenderObject.cpp')
-  C:\Users\Yarts\Documents\VGP330\Framework\Graphics\Src\RenderObject.cpp(20,2):
-  consider using '%zd' in the format string
-  
-  SimpleEffect.cpp
-  StandardEffect.cpp
-  Generating Code...
+﻿  ModelIO.cpp
+C:\Users\Yarts\Documents\VGP330\Framework\Graphics\Src\ModelIO.cpp(128): warning C4715: 'SpringEngine::Graphics::ModelIO::SaveMaterial': not all control paths return a value
   Graphics.vcxproj -> C:\Users\Yarts\Documents\VGP330\x64\Debug\Graphics.lib

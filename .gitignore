@@ -19,6 +19,7 @@
 # Fortran module files
 *.mod
 *.smod
+*.vs
 
 # Compiled Static libraries
 *.lai
@@ -30,3 +31,8 @@
 *.exe
 *.out
 *.app
+.vs/SpringEngine/FileContentIndex/db104540-33bc-4ce9-b7fa-e5344ec2de70.vsidx
+.vs/SpringEngine/FileContentIndex/b8c8a717-806a-4167-8359-6e99c6c9c391.vsidx
+.vs/SpringEngine/FileContentIndex/9d959973-6240-4a39-a2ca-264936956131.vsidx
+.vs/SpringEngine/FileContentIndex/996a1c98-bc9c-4db0-af66-61a72875cda3.vsidx
+.vs/SpringEngine/FileContentIndex/8fa760e9-664d-414f-ae62-da608dec2ec3.vsidx

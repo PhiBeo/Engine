@@ -19,5 +19,6 @@ private:
 	SpringEngine::Graphics::DirectionalLight mDirectionalLight;
 	SpringEngine::Graphics::StandardEffect mStandardEffect;
 
-	SpringEngine::Graphics::RenderGroup mCharacter;
+	SpringEngine::Graphics::RenderGroup mPaladin;
+	SpringEngine::Graphics::RenderGroup mSwat;
 };
