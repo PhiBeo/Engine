@@ -1,3 +1,5 @@
-﻿  ModelIO.cpp
-C:\Users\Yarts\Documents\VGP330\Framework\Graphics\Src\ModelIO.cpp(128): warning C4715: 'SpringEngine::Graphics::ModelIO::SaveMaterial': not all control paths return a value
+﻿  PostProcessingEffect.cpp
+C:\Users\Yarts\Documents\VGP330\Framework\Graphics\Src\PostProcessingEffect.cpp(119,62): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  (compiling source file '/Src/PostProcessingEffect.cpp')
+  
   Graphics.vcxproj -> C:\Users\Yarts\Documents\VGP330\x64\Debug\Graphics.lib

@@ -217,6 +217,46 @@ MeshPC MeshBuilder::CreatePlanePC(uint32_t numRows, uint32_t numCols, float spac
 	return mesh;
 }
 
+Mesh SpringEngine::Graphics::MeshBuilder::CreateGroundPlane(uint32_t numRows, uint32_t numCols, float spacing)
+{
+	Mesh mesh;
+
+	int index = rand() % 100;
+
+	const float hpw = static_cast<float>(numCols) * spacing * 0.5f;
+	const float hph = static_cast<float>(numRows) * spacing * 0.5f;
+	const float uInc = 1.0f / static_cast<float>(numCols);
+	const float vInc = 1.0f / static_cast<float>(numRows);
+
+	float x = -hpw;
+	float z = -hph;
+	float u = 0.0f;
+	float v = 1.0f;
+
+	for (uint32_t r = 0; r <= numRows; ++r)
+	{
+		for (uint32_t c = 0; c <= numCols; ++c)
+		{
+			mesh.vertices.push_back({
+				{x, 0.0f, z},
+				{0.0f,1.0f,0.0f},
+				{0.0f,0.0f,1.0f},
+				{u,v} });
+			x += spacing;
+			u += uInc;
+		}
+
+		x = -hpw;
+		z += spacing;
+		u = 0.0f;
+		v -= vInc;
+	}
+
+	CreatePlaneIndices(mesh.indices, numRows, numCols);
+
+	return mesh;
+}
+
 MeshPC MeshBuilder::CreateCylinderPC(uint32_t slices, uint32_t rings)
 {
 	MeshPC mesh;
@@ -386,6 +426,18 @@ MeshPX MeshBuilder::CreateSkySpherePX(uint32_t slices, uint32_t rings, float rad
 	}
 
 	CreatePlaneIndices(mesh.indices, rings, slices);
+
+	return mesh;
+}
+
+MeshPX MeshBuilder::CreateScreenQuad()
+{
+	MeshPX mesh;
+	mesh.vertices.push_back({ {-1.0f,-1.0f,0.0f}, {0.0f, 1.0f} });
+	mesh.vertices.push_back({ {-1.0f,1.0f,0.0f}, {0.0f, 0.0f} });
+	mesh.vertices.push_back({ {1.0f,1.0f,0.0f}, {1.0f, 0.0f} });
+	mesh.vertices.push_back({ {1.0f,-1.0f,0.0f}, {1.0f, 1.0f} });
+	mesh.indices = { 0,1,2,0,2,3 };
 
 	return mesh;
 }

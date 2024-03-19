@@ -18,6 +18,7 @@ namespace SpringEngine::Graphics
 
 		// Plane
 		static MeshPC CreatePlanePC(uint32_t numRows, uint32_t numCols, float spacing);
+		static Mesh CreateGroundPlane(uint32_t numRows, uint32_t numCols, float spacing);
 
 		// Cylinder
 		static MeshPC CreateCylinderPC(uint32_t slices, uint32_t rings);
@@ -29,5 +30,8 @@ namespace SpringEngine::Graphics
 
 		// SkySphere
 		static MeshPX CreateSkySpherePX(uint32_t slices, uint32_t rings, float radius);
+
+		// Screen Quad
+		static MeshPX CreateScreenQuad();
 	};
 }
