@@ -21,6 +21,9 @@ void GameState::Initialize()
 
 	mPostProcessingEffect.Initialize(L"../../Assets/Shaders/PostProcess.fx");
 	mPostProcessingEffect.SetTexture(&mRenderTarget);
+	mPostProcessingEffect.SetTexture(&mCombineTexture, 1);
+
+	mCombineTexture.Initialize(L"../../Assets/Textures/earth_clouds.jpg");
 
 	GraphicsSystem* gs = GraphicsSystem::Get();
 	const uint32_t screenWidth = gs->GetBackBufferWidth();
@@ -56,6 +59,7 @@ void GameState::Terminate()
 	mScreenQuad.Terminate();
 	mGround.Terminate();
 	mRenderTarget.Terminate();
+	mCombineTexture.Terminate();
 	CleanupRenderGroup(mSwat);
 	CleanupRenderGroup(mPaladin);
 	mPostProcessingEffect.Terminate();

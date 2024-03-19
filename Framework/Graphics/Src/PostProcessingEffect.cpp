@@ -71,12 +71,28 @@ void SpringEngine::Graphics::PostProcessingEffect::Begin()
 	}
 		break;
 	case PostProcessingEffect::Mode::Blur:
+	{
+		GraphicsSystem* gs = GraphicsSystem::Get();
+		const float screenWidth = gs->GetBackBufferWidth();
+		const float screenHeight = gs->GetBackBufferHeight();
+		data.params0 = mBlurStrength / screenWidth;
+		data.params1 = mBlurStrength / screenHeight;
+	}
 		break;
-	case PostProcessingEffect::Mode::Combine2:
-		break;
+	case PostProcessingEffect::Mode::Combine2:break;
 	case PostProcessingEffect::Mode::MotionBlur:
+	{
+		GraphicsSystem* gs = GraphicsSystem::Get();
+		const float screenWidth = gs->GetBackBufferWidth();
+		const float screenHeight = gs->GetBackBufferHeight();
+		data.params0 = mBlurStrength / screenWidth;
+		data.params1 = mBlurStrength / screenHeight;
+	}
 		break;
 	case PostProcessingEffect::Mode::ChromaticAberration:
+	{
+		data.params0 = mAberrationValue;
+	}
 		break;
 	default:
 		break;
@@ -121,7 +137,19 @@ void SpringEngine::Graphics::PostProcessingEffect::DebugUI()
 			mMode = static_cast<Mode>(currentMode);
 		}
 
-		ImGui::DragFloat("MirrorScaleX", &mMirrorScaleX, 0.1f, -1.0f, 1.0f);
-		ImGui::DragFloat("MirrorScaleY", &mMirrorScaleY, 0.1f, -1.0f, 1.0f);
+		if (mMode == Mode::Mirror)
+		{
+			ImGui::DragFloat("MirrorScaleX", &mMirrorScaleX, 0.1f, -1.0f, 1.0f);
+			ImGui::DragFloat("MirrorScaleY", &mMirrorScaleY, 0.1f, -1.0f, 1.0f);
+		}
+		else if (mMode == Mode::Blur || mMode == Mode::MotionBlur)
+		{
+			ImGui::DragFloat("BlurStrength", &mBlurStrength, 1.0f, 0.0f, 100.0f);
+		}
+		else if (mMode == Mode::ChromaticAberration)
+		{
+			ImGui::DragFloat("AberrationValue", &mAberrationValue, 0.001f, 0.001f, 1.0f);
+		}
+		
 	}
 }

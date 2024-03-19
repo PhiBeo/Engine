@@ -60,5 +60,6 @@ namespace SpringEngine::Graphics
 		float mMirrorScaleX = -1.0f;
 		float mMirrorScaleY = -1.0f;
 		float mBlurStrength = 5.0f;
+		float mAberrationValue = 0.005f;
 	};
 }

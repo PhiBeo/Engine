@@ -26,6 +26,6 @@ private:
 	SpringEngine::Graphics::RenderObject mScreenQuad;
 	SpringEngine::Graphics::RenderTarget mRenderTarget;
 	
-
+	SpringEngine::Graphics::Texture mCombineTexture;
 	
 };
