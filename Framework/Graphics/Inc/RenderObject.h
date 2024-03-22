@@ -29,6 +29,7 @@ namespace SpringEngine::Graphics
 	[[nodiscard]] RenderGroup CreateRenderGroup(ModelId id);
 	[[nodiscard]] RenderGroup CreateRenderGroup(const Model& model);
 	void CleanupRenderGroup(RenderGroup& renderGroup);
+	void SetRenderGroundPosition(RenderGroup& renderGroup, const Math::Vector3& position);
 
 	template<class Effect>
 	void DrawRenderGroup(Effect& effect, const RenderGroup& renderGroup)

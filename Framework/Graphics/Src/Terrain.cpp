@@ -13,7 +13,7 @@ void SpringEngine::Graphics::Terrain::Initialize(const std::filesystem::path& fi
 
 	fseek(file, 0L, SEEK_END);
 	const uint32_t fileSize = ftell(file);
-	const uint32_t dimensions = static_cast<uint32_t>(sqrt(static_cast<float>(fileSize));
+	const uint32_t dimensions = static_cast<uint32_t>(sqrt(static_cast<float>(fileSize)));
 	fseek(file, 0L, SEEK_SET);
 
 	mRows = dimensions;

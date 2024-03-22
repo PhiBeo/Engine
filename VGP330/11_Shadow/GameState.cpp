@@ -45,8 +45,6 @@ void GameState::Initialize()
 	mGround.diffuseMapId = TextureManager::Get()->LoadTexture(L"misc/concrete.jpg");
 
 	MeshPX screenMesh = MeshBuilder::CreateScreenQuad();
-
-
 }
 
 void GameState::Terminate()

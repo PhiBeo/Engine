@@ -63,3 +63,11 @@ void Graphics::CleanupRenderGroup(RenderGroup& renderGroup)
 		renderObject.Terminate();
 	}
 }
+
+void SpringEngine::Graphics::SetRenderGroundPosition(RenderGroup& renderGroup, const Math::Vector3& position)
+{
+	for (RenderObject& renderObject : renderGroup)
+	{
+		renderObject.transform.position = position;
+	}
+}
