@@ -19,13 +19,13 @@ private:
 	SpringEngine::Graphics::DirectionalLight mDirectionalLight;
 	SpringEngine::Graphics::StandardEffect mStandardEffect;
 	SpringEngine::Graphics::PostProcessingEffect mPostProcessingEffect;
+	SpringEngine::Graphics::GaussianBlurEffect mGaussianBlurEffect;
 
 	SpringEngine::Graphics::RenderGroup mPaladin;
 	SpringEngine::Graphics::RenderGroup mSwat;
 	SpringEngine::Graphics::RenderObject mGround;
 	SpringEngine::Graphics::RenderObject mScreenQuad;
+
 	SpringEngine::Graphics::RenderTarget mRenderTarget;
-	
-	SpringEngine::Graphics::Texture mCombineTexture;
-	
+	SpringEngine::Graphics::RenderTarget mBlurRenderTarget;
 };

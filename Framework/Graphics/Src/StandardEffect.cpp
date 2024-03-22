@@ -46,11 +46,16 @@ void SpringEngine::Graphics::StandardEffect::Begin()
 	mSettingsBuffer.BindVS(3);
 	mSettingsBuffer.BindPS(3);
 
+	mSampler.BindVS(0);
 	mSampler.BindPS(0);
 }
 
 void SpringEngine::Graphics::StandardEffect::End()
 {
+	if (mShadowMap != nullptr)
+	{
+		Texture::UnbindPS(4);
+	}
 }
 
 void SpringEngine::Graphics::StandardEffect::Render(const RenderObject& renderObject)
@@ -59,17 +64,27 @@ void SpringEngine::Graphics::StandardEffect::Render(const RenderObject& renderOb
 	const auto& matView = mCamera->GetViewMatrix();
 	const auto& matProj = mCamera->GetProjectionMatrix();
 
-	TransformData data;
-	data.wvp = Transpose(matWorld * matView * matProj);
-	data.world = Transpose(matWorld);
-	data.viewPosition = mCamera->GetPosition();
-
 	SettingsData settingsData;
 	settingsData.useDiffuseMap = mSettingsData.useDiffuseMap > 0 && renderObject.diffuseMapId > 0;
 	settingsData.useNormalMap = mSettingsData.useNormalMap > 0 && renderObject.normalMapId > 0;
 	settingsData.useSpecMap = mSettingsData.useSpecMap > 0 && renderObject.specMapId > 0;
 	settingsData.useBumpMap = mSettingsData.useBumpMap > 0 && renderObject.bumpMapId > 0;
+	settingsData.useShadowMap = mSettingsData.useShadowMap > 0 && mShadowMap != nullptr;
 	settingsData.bumpWeight = mSettingsData.bumpWeight;
+	settingsData.depthBias = mSettingsData.depthBias;
+
+	TransformData data;
+	data.wvp = Transpose(matWorld * matView * matProj);
+	data.world = Transpose(matWorld);
+	data.viewPosition = mCamera->GetPosition();
+	if (settingsData.useShadowMap)
+	{
+		const auto& matLightView = mLightCamera->GetViewMatrix();
+		const auto& matLightProj = mLightCamera->GetProjectionMatrix();
+		data.lwvp = Transpose(matWorld * matLightView * matLightProj);
+
+		mShadowMap->BindPS(4);
+	}
 
 	mTransformBuffer.Update(data);
 	mLightBuffer.Update(*mDirectionalLight);
@@ -89,9 +104,19 @@ void SpringEngine::Graphics::StandardEffect::SetCamera(const Camera& camera)
 	mCamera = &camera;
 }
 
+void SpringEngine::Graphics::StandardEffect::SetLightCamera(const Camera& camera)
+{
+	mLightCamera = &camera;
+}
+
 void SpringEngine::Graphics::StandardEffect::SetDirectionalLight(const DirectionalLight& directionalLight)
 {
 	mDirectionalLight = &directionalLight;
+}
+
+void SpringEngine::Graphics::StandardEffect::SetShadowMap(const Texture& shadowMap)
+{
+	mShadowMap = &shadowMap;
 }
 
 void SpringEngine::Graphics::StandardEffect::DebugUI()
@@ -118,6 +143,12 @@ void SpringEngine::Graphics::StandardEffect::DebugUI()
 		{
 			mSettingsData.useBumpMap = useBump ? 1 : 0;
 		}
+		bool useShadow = mSettingsData.useShadowMap > 0;
+		if (ImGui::Checkbox("useShadow", &useShadow))
+		{
+			mSettingsData.useShadowMap = useShadow ? 1 : 0;
+		}
 		ImGui::DragFloat("BumpWeight", &mSettingsData.bumpWeight, 0.1f, 0.0f, 2.0f);
+		ImGui::DragFloat("DepthBias", &mSettingsData.depthBias, 0.000001f, 0.0f, 1.0f, "%.6f");
 	}
 }

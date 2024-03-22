@@ -21,14 +21,16 @@ void GameState::Initialize()
 
 	mPostProcessingEffect.Initialize(L"../../Assets/Shaders/PostProcess.fx");
 	mPostProcessingEffect.SetTexture(&mRenderTarget);
-	mPostProcessingEffect.SetTexture(&mCombineTexture, 1);
+	mPostProcessingEffect.SetTexture(&mGaussianBlurEffect.GetResultTexture(), 1);
 
-	mCombineTexture.Initialize(L"../../Assets/Textures/earth_clouds.jpg");
+	mGaussianBlurEffect.Initialize();
+	mGaussianBlurEffect.SetSourceTexture(mBlurRenderTarget);
 
 	GraphicsSystem* gs = GraphicsSystem::Get();
 	const uint32_t screenWidth = gs->GetBackBufferWidth();
 	const uint32_t screenHeight = gs->GetBackBufferHeight();
 	mRenderTarget.Initialize(screenWidth, screenHeight, RenderTarget::Format::RGBA_U8);
+	mBlurRenderTarget.Initialize(screenWidth, screenHeight, RenderTarget::Format::RGBA_U8);
 
 	ModelId modelId = ModelManager::Get()->LoadModel(L"../../Assets/Models/Character/Paladin/Paladin.model");
 	mPaladin = CreateRenderGroup(modelId);
@@ -52,6 +54,8 @@ void GameState::Initialize()
 
 	MeshPX screenMesh = MeshBuilder::CreateScreenQuad();
 	mScreenQuad.meshBuffer.Initialize(screenMesh);
+
+
 }
 
 void GameState::Terminate()
@@ -59,9 +63,10 @@ void GameState::Terminate()
 	mScreenQuad.Terminate();
 	mGround.Terminate();
 	mRenderTarget.Terminate();
-	mCombineTexture.Terminate();
+	mBlurRenderTarget.Terminate();
 	CleanupRenderGroup(mSwat);
 	CleanupRenderGroup(mPaladin);
+	mGaussianBlurEffect.Terminate();
 	mPostProcessingEffect.Terminate();
 	mStandardEffect.Terminate();
 }
@@ -81,6 +86,16 @@ void GameState::Render()
 		mStandardEffect.End();
 	mRenderTarget.EndRender();
 
+	mBlurRenderTarget.BeginRender({0.0f,0.0f,0.0f,0.0f});
+		mStandardEffect.Begin();
+			DrawRenderGroup(mStandardEffect, mPaladin);
+		mStandardEffect.End();
+	mBlurRenderTarget.EndRender();
+
+	mGaussianBlurEffect.Begin();
+		mGaussianBlurEffect.Render(mScreenQuad);
+	mGaussianBlurEffect.End();
+
 	mPostProcessingEffect.Begin();
 		mPostProcessingEffect.Render(mScreenQuad);
 	mPostProcessingEffect.End();
@@ -93,6 +108,7 @@ void GameState::DebugUI()
 	
 	mStandardEffect.DebugUI();
 	mPostProcessingEffect.DebugUI();
+	mGaussianBlurEffect.DebugUI();
 
 	ImGui::End();
 }

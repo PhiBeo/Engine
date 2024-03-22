@@ -18,7 +18,7 @@ private:
 	SpringEngine::Graphics::Camera mCamera;
 	SpringEngine::Graphics::DirectionalLight mDirectionalLight;
 	SpringEngine::Graphics::Mesh mSphere;
-	SpringEngine::Graphics::RenderObject mEarth;
+	SpringEngine::Graphics::RenderObject mWall;
 	SpringEngine::Graphics::StandardEffect mStandardEffect;
 
 	SpringEngine::Graphics::Camera mRenderTargetCamera;

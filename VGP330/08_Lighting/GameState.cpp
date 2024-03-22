@@ -17,16 +17,16 @@ void GameState::Initialize()
 
 	mSphere = MeshBuilder::CreateSphere(60, 60, 1.0f);
 
-	mEarth.meshBuffer.Initialize(mSphere);
-	mEarth.diffuseMapId = TextureManager::Get()->LoadTexture("earth.jpg");
-	mEarth.normalMapId = TextureManager::Get()->LoadTexture("earth_normal.jpg");
-	mEarth.specMapId = TextureManager::Get()->LoadTexture("earth_spec.jpg");
-	mEarth.bumpMapId = TextureManager::Get()->LoadTexture("earth_bump.jpg");
-	mEarth.material.emissive = { 0.2f, 0.2f, 0.2f, 0.2f };
-	mEarth.material.ambient = { 0.5f, 0.5f, 0.5f, 1.0f };
-	mEarth.material.diffuse = { 0.8f, 0.8f, 0.8f, 1.0f };
-	mEarth.material.specular = { 1.0f, 1.0f, 1.0f, 1.0f };
-	mEarth.material.power = 10.0f;
+	mWall.meshBuffer.Initialize(mSphere);
+	mWall.diffuseMapId = TextureManager::Get()->LoadTexture("brick_wall.jpg");
+	mWall.normalMapId = TextureManager::Get()->LoadTexture("brick_wall_normal.jpg");
+	mWall.specMapId = TextureManager::Get()->LoadTexture("brick_wall_spec.jpg");
+	mWall.bumpMapId = TextureManager::Get()->LoadTexture("brick_wall_bump.jpg");
+	mWall.material.emissive = { 0.2f, 0.2f, 0.2f, 0.2f };
+	mWall.material.ambient = { 0.5f, 0.5f, 0.5f, 1.0f };
+	mWall.material.diffuse = { 0.8f, 0.8f, 0.8f, 1.0f };
+	mWall.material.specular = { 1.0f, 1.0f, 1.0f, 1.0f };
+	mWall.material.power = 10.0f;
 
 	mCelShadingEffect.Initialize(L"../../Assets/Shaders/CelShader.fx");
 	mCelShadingEffect.SetCamera(mCamera);
@@ -49,7 +49,7 @@ void GameState::Terminate()
 	mRenderTarget.Terminate();
 	mCelShadingEffect.Terminate();
 	mStandardEffect.Terminate();
-	mEarth.Terminate();
+	mWall.Terminate();
 }
 
 void GameState::Update(const float deltaTime)
@@ -62,7 +62,7 @@ void GameState::Render()
 	mStandardEffect.SetCamera(mRenderTargetCamera);
 	mRenderTarget.BeginRender();
 		mStandardEffect.Begin();
-			mStandardEffect.Render(mEarth);
+			mStandardEffect.Render(mWall);
 		mStandardEffect.End();
 	mRenderTarget.EndRender();
 
@@ -70,13 +70,13 @@ void GameState::Render()
 	{
 		mStandardEffect.SetCamera(mCamera);
 		mStandardEffect.Begin();
-		mStandardEffect.Render(mEarth);
+		mStandardEffect.Render(mWall);
 		mStandardEffect.End();
 	}
 	else
 	{
 		mCelShadingEffect.Begin();
-		mCelShadingEffect.Render(mEarth);
+		mCelShadingEffect.Render(mWall);
 		mCelShadingEffect.End();
 	}
 }
@@ -99,11 +99,11 @@ void GameState::DebugUI()
 
 	if (ImGui::CollapsingHeader("Material", ImGuiTreeNodeFlags_DefaultOpen))
 	{
-		ImGui::ColorEdit4("Emissive##Material", &mEarth.material.emissive.r);
-		ImGui::ColorEdit4("Ambient##Material", &mEarth.material.ambient.r);
-		ImGui::ColorEdit4("Diffuse##Material", &mEarth.material.diffuse.r);
-		ImGui::ColorEdit4("Specular##Material", &mEarth.material.specular.r);
-		ImGui::DragFloat("Power##Material", &mEarth.material.power, 1.0f, 0.0f);
+		ImGui::ColorEdit4("Emissive##Material", &mWall.material.emissive.r);
+		ImGui::ColorEdit4("Ambient##Material", &mWall.material.ambient.r);
+		ImGui::ColorEdit4("Diffuse##Material", &mWall.material.diffuse.r);
+		ImGui::ColorEdit4("Specular##Material", &mWall.material.specular.r);
+		ImGui::DragFloat("Power##Material", &mWall.material.power, 1.0f, 0.0f);
 	}
 	ImGui::Separator();
 	ImGui::Text("RenderTarget");
