@@ -65,10 +65,10 @@ void App::Run(const AppConfig& config)
 
 		auto gs = GraphicsSystem::Get();
 		gs->BeginRender();
-			mCurrentState->Render();
 			DebugUI::BeginRender();
 				mCurrentState->DebugUI();
 			DebugUI::EndRender();
+			mCurrentState->Render();
 		gs->EndRender();
 	}
 

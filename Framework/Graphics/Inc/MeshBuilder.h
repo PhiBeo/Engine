@@ -33,5 +33,8 @@ namespace SpringEngine::Graphics
 
 		// Screen Quad
 		static MeshPX CreateScreenQuad();
+
+		//Texture Quad
+		static Mesh CreateSpriteQuad(float width, float height);
 	};
 }

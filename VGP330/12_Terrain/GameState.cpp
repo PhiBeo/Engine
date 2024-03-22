@@ -39,21 +39,20 @@ void GameState::Initialize()
 	mTerrain.Initialize(L"../../Assets/Textures/terrain/heightmap_200x200.raw", 10.0f);
 
 	mGround.meshBuffer.Initialize(mTerrain.GetMesh());
-	mGround.diffuseMapId = TextureManager::Get()->LoadTexture(L"mountain/mountain_texture.jpg");
+	mGround.diffuseMapId = TextureManager::Get()->LoadTexture(L"terrain/dirt_seamless.jpg");
 	mGround.normalMapId = TextureManager::Get()->LoadTexture(L"mountain/mountain_normal.jpg");
 	mGround.specMapId = TextureManager::Get()->LoadTexture(L"mountain/mountain_spec.jpg");
 	mGround.bumpMapId = TextureManager::Get()->LoadTexture(L"terrain/grass_2048.jpg");
 
-	Math::Vector3 spawnPos = Vector3::Zero;
-	spawnPos.x = 10.f;
-	spawnPos.z = 10.f;
-	spawnPos.y = mTerrain.GetHeight(spawnPos);
-	SetRenderGroundPosition(mPaladin, spawnPos);
+	mSwatPosition.x = 10.f;
+	mSwatPosition.z = 10.f;
+	mSwatPosition.y = mTerrain.GetHeight(mSwatPosition);
+	SetRenderGroundPosition(mPaladin, mSwatPosition);
 
-	spawnPos.x = 15.f;
-	spawnPos.z = 5.f;
-	spawnPos.y = mTerrain.GetHeight(spawnPos);
-	SetRenderGroundPosition(mSwat, spawnPos);
+	mPaladinPosition.x = 15.f;
+	mPaladinPosition.z = 5.f;
+	mPaladinPosition.y = mTerrain.GetHeight(mPaladinPosition);
+	SetRenderGroundPosition(mSwat, mPaladinPosition);
 }
 
 void GameState::Terminate()
@@ -102,6 +101,38 @@ void GameState::DebugUI()
 		ImGui::ColorEdit4("Ambient##Light", &mDirectionalLight.ambient.r);
 		ImGui::ColorEdit4("Diffuse##Light", &mDirectionalLight.diffuse.r);
 		ImGui::ColorEdit4("Specular##Light", &mDirectionalLight.specular.r);
+	}
+
+	Vector2 terrainSize;
+	terrainSize.x = mTerrain.GetWidth();
+	terrainSize.y = mTerrain.GetHeight();
+
+	if (ImGui::CollapsingHeader("PaladinPosition", ImGuiTreeNodeFlags_DefaultOpen))
+	{
+		if (ImGui::DragFloat("PosX##Paladin", &mPaladinPosition.x, 0.1f, 0.0f, terrainSize.x))
+		{
+			mPaladinPosition.y = mTerrain.GetHeight(mPaladinPosition);
+			SetRenderGroundPosition(mPaladin, mPaladinPosition);
+		}
+		if (ImGui::DragFloat("PosZ##Paladin", &mPaladinPosition.z, 0.1f, 0.0f, terrainSize.y))
+		{
+			mPaladinPosition.y = mTerrain.GetHeight(mPaladinPosition);
+			SetRenderGroundPosition(mPaladin, mPaladinPosition);
+		}
+	}
+
+	if (ImGui::CollapsingHeader("SwatPosition", ImGuiTreeNodeFlags_DefaultOpen))
+	{
+		if (ImGui::DragFloat("PosX##Swat", &mSwatPosition.x, 0.1f, 0.0f, terrainSize.x))
+		{
+			mSwatPosition.y = mTerrain.GetHeight(mSwatPosition);
+			SetRenderGroundPosition(mSwat, mSwatPosition);
+		}
+		if (ImGui::DragFloat("PosZ##Swat", &mSwatPosition.z, 0.1f, 0.0f, terrainSize.y))
+		{
+			mSwatPosition.y = mTerrain.GetHeight(mSwatPosition);
+			SetRenderGroundPosition(mSwat, mSwatPosition);
+		}
 	}
 	
 	mStandardEffect.DebugUI();

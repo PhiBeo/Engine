@@ -25,4 +25,7 @@ private:
 	SpringEngine::Graphics::RenderGroup mSwat;
 	SpringEngine::Graphics::RenderObject mGround;
 	SpringEngine::Graphics::Terrain mTerrain;
+
+	SpringEngine::Math::Vector3 mSwatPosition;
+	SpringEngine::Math::Vector3 mPaladinPosition;;
 };
