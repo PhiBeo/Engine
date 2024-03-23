@@ -20,7 +20,8 @@ namespace
 		"Blur",
 		"Combine2",
 		"MotionBlur",
-		"ChromaticAberration"
+		"ChromaticAberration",
+		"Thermal"
 	};
 }
 
@@ -93,6 +94,8 @@ void SpringEngine::Graphics::PostProcessingEffect::Begin()
 	{
 		data.params0 = mAberrationValue;
 	}
+		break;
+	case PostProcessingEffect::Mode::Thermal:
 		break;
 	default:
 		break;

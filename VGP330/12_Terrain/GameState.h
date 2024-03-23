@@ -21,8 +21,8 @@ private:
 	SpringEngine::Graphics::TerrainEffect mTerrainEffect;
 	SpringEngine::Graphics::ShadowEffect mShadowEffect;
 
-	SpringEngine::Graphics::RenderGroup mPaladin;
-	SpringEngine::Graphics::RenderGroup mSwat;
+	SpringEngine::Graphics::RenderGroup mOlivia;
+	SpringEngine::Graphics::RenderGroup mAmy;
 	SpringEngine::Graphics::RenderObject mGround;
 	SpringEngine::Graphics::Terrain mTerrain;
 

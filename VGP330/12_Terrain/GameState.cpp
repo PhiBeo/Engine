@@ -31,10 +31,10 @@ void GameState::Initialize()
 	mShadowEffect.SetDirectionLight(mDirectionalLight);
 
 	ModelId modelId = ModelManager::Get()->LoadModel(L"../../Assets/Models/Character/Paladin/Paladin.model");
-	mPaladin = CreateRenderGroup(modelId);
+	mOlivia = CreateRenderGroup(modelId);
 
 	modelId = ModelManager::Get()->LoadModel(L"../../Assets/Models/Character/Swat/Swat.model");
-	mSwat = CreateRenderGroup(modelId);
+	mAmy = CreateRenderGroup(modelId);
 
 	mTerrain.Initialize(L"../../Assets/Textures/terrain/heightmap_200x200.raw", 10.0f);
 
@@ -47,19 +47,19 @@ void GameState::Initialize()
 	mSwatPosition.x = 10.f;
 	mSwatPosition.z = 10.f;
 	mSwatPosition.y = mTerrain.GetHeight(mSwatPosition);
-	SetRenderGroundPosition(mPaladin, mSwatPosition);
+	SetRenderGroundPosition(mOlivia, mSwatPosition);
 
 	mPaladinPosition.x = 15.f;
 	mPaladinPosition.z = 5.f;
 	mPaladinPosition.y = mTerrain.GetHeight(mPaladinPosition);
-	SetRenderGroundPosition(mSwat, mPaladinPosition);
+	SetRenderGroundPosition(mAmy, mPaladinPosition);
 }
 
 void GameState::Terminate()
 {
 	mGround.Terminate();
-	CleanupRenderGroup(mSwat);
-	CleanupRenderGroup(mPaladin);
+	CleanupRenderGroup(mAmy);
+	CleanupRenderGroup(mOlivia);
 	mShadowEffect.Terminate();
 	mTerrainEffect.Terminate();
 	mStandardEffect.Terminate();
@@ -73,8 +73,8 @@ void GameState::Update(const float deltaTime)
 void GameState::Render()
 {
 	mShadowEffect.Begin();
-		DrawRenderGroup(mShadowEffect, mSwat);
-		DrawRenderGroup(mShadowEffect, mPaladin);
+		DrawRenderGroup(mShadowEffect, mAmy);
+		DrawRenderGroup(mShadowEffect, mOlivia);
 	mShadowEffect.End();
 
 	mTerrainEffect.Begin();
@@ -82,8 +82,8 @@ void GameState::Render()
 	mTerrainEffect.End();
 
 	mStandardEffect.Begin();
-		DrawRenderGroup(mStandardEffect, mSwat);
-		DrawRenderGroup(mStandardEffect, mPaladin);
+		DrawRenderGroup(mStandardEffect, mAmy);
+		DrawRenderGroup(mStandardEffect, mOlivia);
 	mStandardEffect.End();
 }
 
@@ -112,12 +112,12 @@ void GameState::DebugUI()
 		if (ImGui::DragFloat("PosX##Paladin", &mPaladinPosition.x, 0.1f, 0.0f, terrainSize.x))
 		{
 			mPaladinPosition.y = mTerrain.GetHeight(mPaladinPosition);
-			SetRenderGroundPosition(mPaladin, mPaladinPosition);
+			SetRenderGroundPosition(mOlivia, mPaladinPosition);
 		}
 		if (ImGui::DragFloat("PosZ##Paladin", &mPaladinPosition.z, 0.1f, 0.0f, terrainSize.y))
 		{
 			mPaladinPosition.y = mTerrain.GetHeight(mPaladinPosition);
-			SetRenderGroundPosition(mPaladin, mPaladinPosition);
+			SetRenderGroundPosition(mOlivia, mPaladinPosition);
 		}
 	}
 
@@ -126,12 +126,12 @@ void GameState::DebugUI()
 		if (ImGui::DragFloat("PosX##Swat", &mSwatPosition.x, 0.1f, 0.0f, terrainSize.x))
 		{
 			mSwatPosition.y = mTerrain.GetHeight(mSwatPosition);
-			SetRenderGroundPosition(mSwat, mSwatPosition);
+			SetRenderGroundPosition(mAmy, mSwatPosition);
 		}
 		if (ImGui::DragFloat("PosZ##Swat", &mSwatPosition.z, 0.1f, 0.0f, terrainSize.y))
 		{
 			mSwatPosition.y = mTerrain.GetHeight(mSwatPosition);
-			SetRenderGroundPosition(mSwat, mSwatPosition);
+			SetRenderGroundPosition(mAmy, mSwatPosition);
 		}
 	}
 	

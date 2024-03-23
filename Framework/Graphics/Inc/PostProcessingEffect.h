@@ -22,7 +22,8 @@ namespace SpringEngine::Graphics
 			Blur,
 			Combine2,
 			MotionBlur,
-			ChromaticAberration
+			ChromaticAberration,
+			Thermal
 		};
 
 		void Initialize(const std::filesystem::path& filePath);

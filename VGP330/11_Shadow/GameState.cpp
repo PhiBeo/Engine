@@ -25,17 +25,17 @@ void GameState::Initialize()
 	mShadowEffect.SetDirectionLight(mDirectionalLight);
 
 	ModelId modelId = ModelManager::Get()->LoadModel(L"../../Assets/Models/Character/Paladin/Paladin.model");
-	mPaladin = CreateRenderGroup(modelId);
+	mOlivia = CreateRenderGroup(modelId);
 
 	modelId = ModelManager::Get()->LoadModel(L"../../Assets/Models/Character/Swat/Swat.model");
-	mSwat = CreateRenderGroup(modelId);
+	mAmy = CreateRenderGroup(modelId);
 
-	for (auto& renderObject : mPaladin)
+	for (auto& renderObject : mOlivia)
 	{
 		renderObject.transform.position.x -= 1.0f;
 	}
 
-	for (auto& renderObject : mSwat)
+	for (auto& renderObject : mAmy)
 	{
 		renderObject.transform.position.x += 1.0f;
 	}
@@ -50,8 +50,8 @@ void GameState::Initialize()
 void GameState::Terminate()
 {
 	mGround.Terminate();
-	CleanupRenderGroup(mSwat);
-	CleanupRenderGroup(mPaladin);
+	CleanupRenderGroup(mAmy);
+	CleanupRenderGroup(mOlivia);
 	mShadowEffect.Terminate();
 	mStandardEffect.Terminate();
 }
@@ -64,13 +64,13 @@ void GameState::Update(const float deltaTime)
 void GameState::Render()
 {
 	mShadowEffect.Begin();
-		DrawRenderGroup(mShadowEffect, mSwat);
-		DrawRenderGroup(mShadowEffect, mPaladin);
+		DrawRenderGroup(mShadowEffect, mAmy);
+		DrawRenderGroup(mShadowEffect, mOlivia);
 	mShadowEffect.End();
 
 	mStandardEffect.Begin();
-	DrawRenderGroup(mStandardEffect, mSwat);
-	DrawRenderGroup(mStandardEffect, mPaladin);
+	DrawRenderGroup(mStandardEffect, mAmy);
+	DrawRenderGroup(mStandardEffect, mOlivia);
 
 	mStandardEffect.Render(mGround);
 	mStandardEffect.End();

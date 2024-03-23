@@ -105,6 +105,39 @@ float4 PS(VS_OUTPUT input) : SV_Target
         float4 blueChannel = textureMap0.Sample(textureSampler, input.texCoord + distortion.y * input.texCoord);
         finalColor = float4(redChannel.r, greenChannel.g, blueChannel.b, 1.0f);
     }
+    else if(mode == 8) //thermal
+    {
+        float4 color = textureMap0.Sample(textureSampler, input.texCoord);
+        float grayColor = 0.299f * color.r + 0.587f * color.g + 0.114 * color.b;
+        
+        float4 thermalColor = { 1.0f, 1.0f, 1.0f, 1.0f };
+        float min = 0.0f;
+        float max = 1.0f;
+        float dv = max - min;
+        
+        if (grayColor < (min + 0.25f * dv))
+        {
+            thermalColor.r = 0.0f;
+            thermalColor.g = 4 * (grayColor - min) / dv;
+        }
+        else if (grayColor < (min + 0.5f * dv))
+        {
+            thermalColor.r = 0.0f;
+            thermalColor.b = 1.0f + 4.0f * (min + 0.25f * dv - grayColor) / dv;
+        }
+        else if (grayColor < (min + 0.75f * dv))
+        {
+            thermalColor.r = 4 * (grayColor - min - 0.5f * dv) / dv;
+            thermalColor.b = 0.0f;
+        }
+        else
+        {
+            thermalColor.g = 1 + 4 * (min + 0.75f * dv - grayColor) / dv;
+            thermalColor.b = 0.0f;
+        }
+        
+        finalColor = thermalColor;
+    }
     
     return finalColor;
 }

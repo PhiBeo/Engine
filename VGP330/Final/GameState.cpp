@@ -21,29 +21,25 @@ void GameState::Initialize()
 
 	mPostProcessingEffect.Initialize(L"../../Assets/Shaders/PostProcess.fx");
 	mPostProcessingEffect.SetTexture(&mRenderTarget);
-	mPostProcessingEffect.SetTexture(&mGaussianBlurEffect.GetResultTexture(), 1);
 
-	mGaussianBlurEffect.Initialize();
-	mGaussianBlurEffect.SetSourceTexture(mBlurRenderTarget);
 
 	GraphicsSystem* gs = GraphicsSystem::Get();
 	const uint32_t screenWidth = gs->GetBackBufferWidth();
 	const uint32_t screenHeight = gs->GetBackBufferHeight();
 	mRenderTarget.Initialize(screenWidth, screenHeight, RenderTarget::Format::RGBA_U8);
-	mBlurRenderTarget.Initialize(screenWidth, screenHeight, RenderTarget::Format::RGBA_U8);
 
-	ModelId modelId = ModelManager::Get()->LoadModel(L"../../Assets/Models/Character/Paladin/Paladin.model");
-	mPaladin = CreateRenderGroup(modelId);
+	ModelId modelId = ModelManager::Get()->LoadModel(L"../../Assets/Models/Character/Olivia/Olivia.model");
+	mOlivia = CreateRenderGroup(modelId);
 
-	modelId = ModelManager::Get()->LoadModel(L"../../Assets/Models/Character/Swat/Swat.model");
-	mSwat = CreateRenderGroup(modelId);
+	modelId = ModelManager::Get()->LoadModel(L"../../Assets/Models/Character/Amy/Amy.model");
+	mAmy = CreateRenderGroup(modelId);
 
-	for (auto& renderObject : mPaladin)
+	for (auto& renderObject : mOlivia)
 	{
 		renderObject.transform.position.x -= 1.0f;
 	}
 
-	for (auto& renderObject : mSwat)
+	for (auto& renderObject : mAmy)
 	{
 		renderObject.transform.position.x += 1.0f;
 	}
@@ -63,10 +59,8 @@ void GameState::Terminate()
 	mScreenQuad.Terminate();
 	mGround.Terminate();
 	mRenderTarget.Terminate();
-	mBlurRenderTarget.Terminate();
-	CleanupRenderGroup(mSwat);
-	CleanupRenderGroup(mPaladin);
-	mGaussianBlurEffect.Terminate();
+	CleanupRenderGroup(mAmy);
+	CleanupRenderGroup(mOlivia);
 	mPostProcessingEffect.Terminate();
 	mStandardEffect.Terminate();
 }
@@ -80,21 +74,11 @@ void GameState::Render()
 {
 	mRenderTarget.BeginRender();
 		mStandardEffect.Begin();
-			DrawRenderGroup(mStandardEffect, mPaladin);
-			DrawRenderGroup(mStandardEffect, mSwat);
+			DrawRenderGroup(mStandardEffect, mOlivia);
+			DrawRenderGroup(mStandardEffect, mAmy);
 			mStandardEffect.Render(mGround);
 		mStandardEffect.End();
 	mRenderTarget.EndRender();
-
-	mBlurRenderTarget.BeginRender({0.0f,0.0f,0.0f,0.0f});
-		mStandardEffect.Begin();
-			DrawRenderGroup(mStandardEffect, mPaladin);
-		mStandardEffect.End();
-	mBlurRenderTarget.EndRender();
-
-	mGaussianBlurEffect.Begin();
-		mGaussianBlurEffect.Render(mScreenQuad);
-	mGaussianBlurEffect.End();
 
 	mPostProcessingEffect.Begin();
 		mPostProcessingEffect.Render(mScreenQuad);
@@ -105,10 +89,20 @@ void GameState::DebugUI()
 {
 	ImGui::Begin("Debug Control", nullptr, ImGuiWindowFlags_AlwaysAutoResize);
 
+	if (ImGui::CollapsingHeader("Light", ImGuiTreeNodeFlags_DefaultOpen))
+	{
+		if (ImGui::DragFloat3("Direction", &mDirectionalLight.direction.x, 0.01f))
+		{
+			mDirectionalLight.direction = Math::Normalize(mDirectionalLight.direction);
+		}
+
+		ImGui::ColorEdit4("Ambient##Light", &mDirectionalLight.ambient.r);
+		ImGui::ColorEdit4("Diffuse##Light", &mDirectionalLight.diffuse.r);
+		ImGui::ColorEdit4("Specular##Light", &mDirectionalLight.specular.r);
+	}
 	
 	mStandardEffect.DebugUI();
 	mPostProcessingEffect.DebugUI();
-	mGaussianBlurEffect.DebugUI();
 
 	ImGui::End();
 }

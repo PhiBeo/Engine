@@ -20,7 +20,7 @@ private:
 	SpringEngine::Graphics::StandardEffect mStandardEffect;
 	SpringEngine::Graphics::ShadowEffect mShadowEffect;
 
-	SpringEngine::Graphics::RenderGroup mPaladin;
-	SpringEngine::Graphics::RenderGroup mSwat;
+	SpringEngine::Graphics::RenderGroup mOlivia;
+	SpringEngine::Graphics::RenderGroup mAmy;
 	SpringEngine::Graphics::RenderObject mGround;
 };

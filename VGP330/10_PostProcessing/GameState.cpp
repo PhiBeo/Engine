@@ -33,17 +33,17 @@ void GameState::Initialize()
 	mBlurRenderTarget.Initialize(screenWidth, screenHeight, RenderTarget::Format::RGBA_U8);
 
 	ModelId modelId = ModelManager::Get()->LoadModel(L"../../Assets/Models/Character/Paladin/Paladin.model");
-	mPaladin = CreateRenderGroup(modelId);
+	mOlivia = CreateRenderGroup(modelId);
 
 	modelId = ModelManager::Get()->LoadModel(L"../../Assets/Models/Character/Swat/Swat.model");
-	mSwat = CreateRenderGroup(modelId);
+	mAmy = CreateRenderGroup(modelId);
 
-	for (auto& renderObject : mPaladin)
+	for (auto& renderObject : mOlivia)
 	{
 		renderObject.transform.position.x -= 1.0f;
 	}
 
-	for (auto& renderObject : mSwat)
+	for (auto& renderObject : mAmy)
 	{
 		renderObject.transform.position.x += 1.0f;
 	}
@@ -64,8 +64,8 @@ void GameState::Terminate()
 	mGround.Terminate();
 	mRenderTarget.Terminate();
 	mBlurRenderTarget.Terminate();
-	CleanupRenderGroup(mSwat);
-	CleanupRenderGroup(mPaladin);
+	CleanupRenderGroup(mAmy);
+	CleanupRenderGroup(mOlivia);
 	mGaussianBlurEffect.Terminate();
 	mPostProcessingEffect.Terminate();
 	mStandardEffect.Terminate();
@@ -80,15 +80,15 @@ void GameState::Render()
 {
 	mRenderTarget.BeginRender();
 		mStandardEffect.Begin();
-			DrawRenderGroup(mStandardEffect, mPaladin);
-			DrawRenderGroup(mStandardEffect, mSwat);
+			DrawRenderGroup(mStandardEffect, mOlivia);
+			DrawRenderGroup(mStandardEffect, mAmy);
 			mStandardEffect.Render(mGround);
 		mStandardEffect.End();
 	mRenderTarget.EndRender();
 
 	mBlurRenderTarget.BeginRender({0.0f,0.0f,0.0f,0.0f});
 		mStandardEffect.Begin();
-			DrawRenderGroup(mStandardEffect, mPaladin);
+			DrawRenderGroup(mStandardEffect, mOlivia);
 		mStandardEffect.End();
 	mBlurRenderTarget.EndRender();
 
