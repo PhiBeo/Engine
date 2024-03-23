@@ -104,7 +104,6 @@ float4 PS(VS_OUTPUT input) : SV_Target
         float4 greenChannel = textureMap0.Sample(textureSampler, input.texCoord);
         float4 blueChannel = textureMap0.Sample(textureSampler, input.texCoord + distortion.y * input.texCoord);
         finalColor = float4(redChannel.r, greenChannel.g, blueChannel.b, 1.0f);
-
     }
     
     return finalColor;

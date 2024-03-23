@@ -1,1 +1,10 @@
-﻿  13_Billboard.vcxproj -> C:\Users\Yarts\Documents\VGP330\x64\Debug\13_Billboard.exe
+﻿  GameState.cpp
+C:\Users\Yarts\Documents\VGP330\Framework\Graphics\Inc\BillBoardEffect.h(5,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file 'GameState.cpp')
+  
+  WinMain.cpp
+C:\Users\Yarts\Documents\VGP330\Framework\Graphics\Inc\BillBoardEffect.h(5,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file 'WinMain.cpp')
+  
+  Generating Code...
+  13_Billboard.vcxproj -> C:\Users\Yarts\Documents\VGP330\x64\Debug\13_Billboard.exe

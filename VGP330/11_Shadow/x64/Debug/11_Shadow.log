@@ -1,5 +1,10 @@
 ﻿  GameState.cpp
+C:\Users\Yarts\Documents\VGP330\Framework\Graphics\Inc\BillBoardEffect.h(5,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file 'GameState.cpp')
+  
   WinMain.cpp
+C:\Users\Yarts\Documents\VGP330\Framework\Graphics\Inc\BillBoardEffect.h(5,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file 'WinMain.cpp')
+  
   Generating Code...
-GameState.obj : error LNK2019: unresolved external symbol "void __cdecl SpringEngine::Graphics::CleanupRenderGroup(class std::vector<class SpringEngine::Graphics::RenderObject,class std::allocator<class SpringEngine::Graphics::RenderObject> > &)" (?CleanupRenderGroup@Graphics@SpringEngine@@YAXAEAV?$vector@VRenderObject@Graphics@SpringEngine@@V?$allocator@VRenderObject@Graphics@SpringEngine@@@std@@@std@@@Z) referenced in function "public: virtual void __cdecl GameState::Terminate(void)" (?Terminate@GameState@@UEAAXXZ)
-C:\Users\Yarts\Documents\VGP330\x64\Debug\11_Shadow.exe : fatal error LNK1120: 1 unresolved externals
+  11_Shadow.vcxproj -> C:\Users\Yarts\Documents\VGP330\x64\Debug\11_Shadow.exe
