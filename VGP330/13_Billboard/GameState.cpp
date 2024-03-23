@@ -34,6 +34,7 @@ void GameState::Render()
 	mBillboardEffect.Begin();
 	mBillboardEffect.Render(mSprite);
 	mBillboardEffect.End();
+
 }
 
 void GameState::DebugUI()
@@ -42,7 +43,6 @@ void GameState::DebugUI()
 	{
 		ImGui::DragFloat3("SpritePostion", &mSprite.transform.position.x, 0.1f);
 	}
-
 
 	ImGui::End();
 
