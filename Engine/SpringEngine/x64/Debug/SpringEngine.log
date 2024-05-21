@@ -1,8 +1,8 @@
 ﻿  Precompiled.cpp
-C:\Users\Yarts\Documents\VGP330\Framework\Graphics\Inc\BillBoardEffect.h(5,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+C:\Users\Yarts\Documents\Engine\Framework\Graphics\Inc\BillBoardEffect.h(5,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
   (compiling source file 'Src/Precompiled.cpp')
   
   App.cpp
   SpringEngine.cpp
   Generating Code...
-  SpringEngine.vcxproj -> C:\Users\Yarts\Documents\VGP330\x64\Debug\SpringEngine.lib
+  SpringEngine.vcxproj -> C:\Users\Yarts\Documents\Engine\x64\Debug\SpringEngine.lib

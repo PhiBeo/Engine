@@ -1,1 +1,2 @@
 C:\Users\Yarts\Documents\VGP330\External\DirectXTK\Bin\Desktop_2019\x64\Debug\DirectXTK.lib
+C:\Users\Yarts\Documents\Engine\External\DirectXTK\Bin\Desktop_2019\x64\Debug\DirectXTK.lib
