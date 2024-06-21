@@ -3,9 +3,12 @@
 #include "Camera.h"
 #include "RenderObject.h"
 #include "VertexTypes.h"
+#include "AnimationUtil.h"
 
 using namespace SpringEngine;
 using namespace SpringEngine::Graphics;
+
+static constexpr size_t MaxBoneCount = 256;
 
 void SpringEngine::Graphics::StandardEffect::Initialize(const std::filesystem::path& filePath)
 {
@@ -13,6 +16,7 @@ void SpringEngine::Graphics::StandardEffect::Initialize(const std::filesystem::p
 	mLightBuffer.Initialize();
 	mMaterialBuffer.Initialize();
 	mSettingsBuffer.Initialize();
+	mBoneTransformBuffer.Initialize(MaxBoneCount * sizeof(Math::Matrix4));
 
 	mVertexShader.Initialize<Vertex>(filePath);
 	mPixShader.Initialize(filePath);
@@ -24,6 +28,7 @@ void SpringEngine::Graphics::StandardEffect::Terminate()
 	mSampler.Terminate();
 	mPixShader.Terminate();
 	mVertexShader.Terminate();
+	mBoneTransformBuffer.Terminate();
 	mSettingsBuffer.Terminate();
 	mMaterialBuffer.Terminate();
 	mLightBuffer.Terminate();
@@ -45,6 +50,8 @@ void SpringEngine::Graphics::StandardEffect::Begin()
 
 	mSettingsBuffer.BindVS(3);
 	mSettingsBuffer.BindPS(3);
+
+	mBoneTransformBuffer.BindVS(4);
 
 	mSampler.BindVS(0);
 	mSampler.BindPS(0);
@@ -70,6 +77,7 @@ void SpringEngine::Graphics::StandardEffect::Render(const RenderObject& renderOb
 	settingsData.useSpecMap = mSettingsData.useSpecMap > 0 && renderObject.specMapId > 0;
 	settingsData.useBumpMap = mSettingsData.useBumpMap > 0 && renderObject.bumpMapId > 0;
 	settingsData.useShadowMap = mSettingsData.useShadowMap > 0 && mShadowMap != nullptr;
+	settingsData.useSkinning = mSettingsData.useSkinning > 0 && renderObject.skeleton != nullptr;
 	settingsData.bumpWeight = mSettingsData.bumpWeight;
 	settingsData.depthBias = mSettingsData.depthBias;
 
@@ -84,6 +92,19 @@ void SpringEngine::Graphics::StandardEffect::Render(const RenderObject& renderOb
 		data.lwvp = Transpose(matWorld * matLightView * matLightProj);
 
 		mShadowMap->BindPS(4);
+	}
+
+	if (settingsData.useSkinning > 0)
+	{
+		AnimationUtil::BoneTransforms boneTransforms;
+		AnimationUtil::ComputeBoneTransforms(renderObject.modelId, boneTransforms, renderObject.animator);
+		AnimationUtil::ApplyBoneOffset(renderObject.modelId, boneTransforms);
+		for (Math::Matrix4& m : boneTransforms)
+		{
+			m = Transpose(m);
+		}
+		boneTransforms.resize(MaxBoneCount);
+		mBoneTransformBuffer.Update(boneTransforms.data());
 	}
 
 	mTransformBuffer.Update(data);
@@ -147,6 +168,11 @@ void SpringEngine::Graphics::StandardEffect::DebugUI()
 		if (ImGui::Checkbox("useShadow", &useShadow))
 		{
 			mSettingsData.useShadowMap = useShadow ? 1 : 0;
+		}
+		bool useSkinning = mSettingsData.useSkinning > 0;
+		if (ImGui::Checkbox("useSkinning", &useSkinning))
+		{
+			mSettingsData.useSkinning = useSkinning ? 1 : 0;
 		}
 		ImGui::DragFloat("BumpWeight", &mSettingsData.bumpWeight, 0.1f, 0.0f, 2.0f);
 		ImGui::DragFloat("DepthBias", &mSettingsData.depthBias, 0.000001f, 0.0f, 1.0f, "%.6f");

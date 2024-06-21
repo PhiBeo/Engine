@@ -1,5 +1,7 @@
 -scale 0.01 ../../Assets/Models/Character/Swat/Swat.fbx ../../Assets/Models/Character/Swat/Swat.fbx
 -scale 0.01 ../../Assets/Models/Character/Paladin/Paladin.fbx ../../Assets/Models/Character/Paladin/Paladin.fbx
+-scale 0.01 ../../Assets/Models/Character/Defeated/Defeated.fbx ../../Assets/Models/Character/Defeated/Defeated.fbx
+-scale 0.01 ../../Assets/Models/Animation/Martelo2/Martelo2.fbx ../../Assets/Models/Animation/Martelo2/Martelo2.fbx
 -scale 0.01 ../../Assets/Models/Character/Amy/Amy.fbx ../../Assets/Models/Character/Amy/Amy.fbx
 -scale 0.01 ../../Assets/Models/Character/Vanguard/Vanguard.fbx ../../Assets/Models/Character/Vanguard/Vanguard.fbx
 -scale 0.01 ../../Assets/Models/Character/Olivia/Olivia.fbx ../../Assets/Models/Character/Olivia/Olivia.fbx

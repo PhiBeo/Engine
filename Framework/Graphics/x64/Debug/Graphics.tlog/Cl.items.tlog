@@ -1,5 +1,7 @@
 C:\Users\Yarts\Documents\Engine\Framework\Graphics\Src\Animation.cpp;C:\Users\Yarts\Documents\Engine\Framework\Graphics\x64\Debug\Animation.obj
 C:\Users\Yarts\Documents\Engine\Framework\Graphics\Src\AnimationBuilder.cpp;C:\Users\Yarts\Documents\Engine\Framework\Graphics\x64\Debug\AnimationBuilder.obj
+C:\Users\Yarts\Documents\Engine\Framework\Graphics\Src\AnimationUtil.cpp;C:\Users\Yarts\Documents\Engine\Framework\Graphics\x64\Debug\AnimationUtil.obj
+C:\Users\Yarts\Documents\Engine\Framework\Graphics\Src\Animator.cpp;C:\Users\Yarts\Documents\Engine\Framework\Graphics\x64\Debug\Animator.obj
 C:\Users\Yarts\Documents\Engine\Framework\Graphics\Src\BillBoardEffect.cpp;C:\Users\Yarts\Documents\Engine\Framework\Graphics\x64\Debug\BillBoardEffect.obj
 C:\Users\Yarts\Documents\Engine\Framework\Graphics\Src\BlendState.cpp;C:\Users\Yarts\Documents\Engine\Framework\Graphics\x64\Debug\BlendState.obj
 C:\Users\Yarts\Documents\Engine\Framework\Graphics\Src\Camera.cpp;C:\Users\Yarts\Documents\Engine\Framework\Graphics\x64\Debug\Camera.obj

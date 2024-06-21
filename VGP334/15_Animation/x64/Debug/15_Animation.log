@@ -1,1 +1,5 @@
-﻿  15_Animation.vcxproj -> C:\Users\Yarts\Documents\Engine\x64\Debug\15_Animation.exe
+﻿  GameState.cpp
+C:\Users\Yarts\Documents\Engine\Framework\Graphics\Inc\BillBoardEffect.h(5,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file 'GameState.cpp')
+  
+  15_Animation.vcxproj -> C:\Users\Yarts\Documents\Engine\x64\Debug\15_Animation.exe

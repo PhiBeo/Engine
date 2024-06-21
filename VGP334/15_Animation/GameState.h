@@ -22,6 +22,6 @@ private:
 	SpringEngine::Graphics::RenderObject mBall;
 	SpringEngine::Graphics::RenderObject mGround;
 
-	SpringEngine::Graphics::Animtion mAnimation;
+	SpringEngine::Graphics::Animation mAnimation;
 	float mAnimationTime = 0.0f;
 };

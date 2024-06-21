@@ -40,13 +40,14 @@ namespace SpringEngine::Graphics
 	struct Vertex
 	{
 		VERTEX_FORMAT(VE_Position | VE_Normal | VE_Tangent | VE_TexCoord | VE_BlendIndex | VE_BlendWeight);
-		
+		static constexpr int MaxBoneWeights = 4;
 
 		Math::Vector3 position;
 		Math::Vector3 normal;
 		Math::Vector3 tangent;
 		Math::Vector2 uvCoord;
-		
+		int boneIndices[MaxBoneWeights] = {};
+		float boneWeights[MaxBoneWeights] = {};
 	};
 }
 

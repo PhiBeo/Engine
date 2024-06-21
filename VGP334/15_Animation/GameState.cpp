@@ -28,9 +28,16 @@ void GameState::Initialize()
 	mGround.diffuseMapId = TextureManager::Get()->LoadTexture("misc/concrete.jpg");
 
 	mAnimation = AnimationBuilder()
-		.AddPositionKey({ 0.0f, 5.0f,0.0f }, 0.0f)
-		.AddPositionKey({ 0.0f, 0.5f, 0.0f }, 3.0f)
-		.AddPositionKey({ 0.0f, 5.0f, 0.0f }, 5.0f)
+		.AddPositionKey({ 0.0f, 5.0f, 0.0f }, 0.0f, EaseType::EaseInOutQuad)
+		.AddPositionKey({ 0.0f, 0.5f, 0.0f }, 1.0f, EaseType::EaseInQuad)
+		.AddPositionKey({ 0.0f, 5.0f, 0.0f }, 2.0f, EaseType::EaseOutQuad)
+		.AddRotaionKey(Math::Quaternion::Normalize({ 0.0f, 0.0f, 0.0f, 1.0f }), 0.0f)
+		.AddRotaionKey(Math::Quaternion::Normalize({ 0.0f, 2.0f, 0.0f, 1.0f }), 2.0f)
+		.AddScaleKey({1.0f, 1.0f, 1.0f}, 0.0f)
+		.AddScaleKey({1.0f, 1.0f, 1.0f}, 0.8f)
+		.AddScaleKey({1.0f, 0.5f, 1.0f}, 1.0f)
+		.AddScaleKey({1.0f, 1.5f, 1.0f}, 1.25f)
+		.AddScaleKey({1.0f, 1.0f, 1.0f}, 2.0f)
 		.Build();
 
 	mAnimationTime = 0.0f;

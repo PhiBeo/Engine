@@ -65,7 +65,7 @@ Quaternion Quaternion::Conjugate(const Quaternion& q)
 
 float Quaternion::Magnitude(const Quaternion& q)
 {
-    return { q.x * q.x + q.y * q.y + q.z + q.z + q.w * q.w };
+    return { q.x * q.x + q.y * q.y + q.z * q.z + q.w * q.w };
 }
 
 Quaternion Quaternion::Normalize(const Quaternion& q)

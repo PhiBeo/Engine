@@ -35,11 +35,11 @@ AnimationBuilder& AnimationBuilder::AddScaleKey(const Math::Vector3& scale, floa
 	return *this;
 }
 
-Animtion AnimationBuilder::Build()
+Animation AnimationBuilder::Build()
 {
 	ASSERT(!mWorkingCopy.mPositionsKeys.empty() ||
 		!mWorkingCopy.mRotationKeys.empty() ||
-		!mWorkingCopy.mRotationKeys.empty(),
+		!mWorkingCopy.mScaleKeys.empty(),
 		"AnimationBuilder: no animation keys are present");
 	return mWorkingCopy;
 }

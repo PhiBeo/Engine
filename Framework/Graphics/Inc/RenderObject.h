@@ -9,6 +9,7 @@
 namespace SpringEngine::Graphics
 {
 	struct Model;
+	class Animator;
 	class RenderObject
 	{
 	public:
@@ -23,11 +24,14 @@ namespace SpringEngine::Graphics
 		TextureId normalMapId;
 		TextureId specMapId;
 		TextureId bumpMapId;
+
+		const Skeleton* skeleton = nullptr;
+		const Animator* animator = nullptr;
 	};
 
 	using RenderGroup = std::vector<RenderObject>;
-	[[nodiscard]] RenderGroup CreateRenderGroup(ModelId id);
-	[[nodiscard]] RenderGroup CreateRenderGroup(const Model& model);
+	[[nodiscard]] RenderGroup CreateRenderGroup(ModelId id, const Animator* animator = nullptr);
+	[[nodiscard]] RenderGroup CreateRenderGroup(const Model& model, const Animator* animator = nullptr);
 	void CleanupRenderGroup(RenderGroup& renderGroup);
 	void SetRenderGroundPosition(RenderGroup& renderGroup, const Math::Vector3& position);
 

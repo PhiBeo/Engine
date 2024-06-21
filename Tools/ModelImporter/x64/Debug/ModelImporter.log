@@ -1,10 +1,4 @@
-﻿  main.cpp
-C:\Users\Yarts\Documents\VGP330\Framework\Graphics\Inc\BillBoardEffect.h(5,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-  (compiling source file 'main.cpp')
-  
-C:\Users\Yarts\Documents\VGP330\Tools\ModelImporter\main.cpp(34,26): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\Yarts\Documents\VGP330\Tools\ModelImporter\main.cpp(108,4): warning C4018: '<': signed/unsigned mismatch
-  ModelImporter.vcxproj -> C:\Users\Yarts\Documents\VGP330\x64\Debug\ModelImporter.exe
-  C:\Users\Yarts\Documents\VGP330\External\assimp-5.2.5\bin\assimp-vc143-mt.dll
-  C:\Users\Yarts\Documents\VGP330\External\assimp-5.2.5\bin\assimp-vc143-mtd.dll
+﻿  ModelImporter.vcxproj -> C:\Users\Yarts\Documents\Engine\x64\Debug\ModelImporter.exe
+  C:\Users\Yarts\Documents\Engine\External\assimp-5.2.5\bin\assimp-vc143-mt.dll
+  C:\Users\Yarts\Documents\Engine\External\assimp-5.2.5\bin\assimp-vc143-mtd.dll
           2 file(s) copied.

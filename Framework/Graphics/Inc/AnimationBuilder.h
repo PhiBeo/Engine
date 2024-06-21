@@ -11,9 +11,9 @@ namespace SpringEngine::Graphics
 		AnimationBuilder& AddRotaionKey(const Math::Quaternion& rot, float time, EaseType easeType = EaseType::Linear);
 		AnimationBuilder& AddScaleKey(const Math::Vector3& scale, float time, EaseType easeType = EaseType::Linear);
 
-		[[nodiscard]] Animtion Build();
+		[[nodiscard]] Animation Build();
 
 	private:
-		Animtion mWorkingCopy;
+		Animation mWorkingCopy;
 	};
 }

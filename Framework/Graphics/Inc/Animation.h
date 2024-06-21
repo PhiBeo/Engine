@@ -5,7 +5,7 @@
 
 namespace SpringEngine::Graphics
 {
-	class Animtion
+	class Animation
 	{
 	public:
 		Transform GetTransform(float time) const;
@@ -17,6 +17,7 @@ namespace SpringEngine::Graphics
 		Math::Vector3 GetScale(float time) const;
 
 		friend class AnimationBuilder;
+		friend class AnimationIO;
 
 		PositionKeys mPositionsKeys;
 		RotationKeys mRotationKeys;

@@ -1,6 +1,7 @@
 #include "Precompiled.h"
 #include "RenderObject.h"
 #include "Model.h"
+#include "Animator.h"
 
 using namespace SpringEngine;
 using namespace SpringEngine::Graphics;
@@ -14,11 +15,11 @@ void RenderObject::Terminate()
 	bumpMapId = 0;
 }
 
-RenderGroup SpringEngine::Graphics::CreateRenderGroup(ModelId id)
+RenderGroup SpringEngine::Graphics::CreateRenderGroup(ModelId id, const Animator* animator)
 {
 	const Model* model = ModelManager::Get()->GetModel(id);
 	ASSERT(model != nullptr, "RenderGroup: ModelId %d is not loaded", id);
-	RenderGroup renderGroup = CreateRenderGroup(*model);
+	RenderGroup renderGroup = CreateRenderGroup(*model, animator);
 	for (RenderObject& renderObject : renderGroup)
 	{
 		renderObject.modelId = id;
@@ -26,7 +27,7 @@ RenderGroup SpringEngine::Graphics::CreateRenderGroup(ModelId id)
 	return renderGroup;
 }
 
-RenderGroup Graphics::CreateRenderGroup(const Model& model)
+RenderGroup Graphics::CreateRenderGroup(const Model& model, const Animator* animator)
 {
 	auto TryLoadTexture = [](const auto& textureName) ->TextureId
 		{
@@ -38,7 +39,6 @@ RenderGroup Graphics::CreateRenderGroup(const Model& model)
 		};
 
 	RenderGroup renderGroup;
-	renderGroup.resize(model.meshData.size());
 	for (const Model::MeshData& meshData : model.meshData)
 	{
 		RenderObject& renderObject = renderGroup.emplace_back();
@@ -52,6 +52,8 @@ RenderGroup Graphics::CreateRenderGroup(const Model& model)
 			renderObject.normalMapId = TryLoadTexture(materialData.normalMapName);
 			renderObject.bumpMapId = TryLoadTexture(materialData.bumpMapName);
 		}
+		renderObject.skeleton = model.skeleton.get();
+		renderObject.animator = animator;
 	}
 	return renderGroup;
 }
