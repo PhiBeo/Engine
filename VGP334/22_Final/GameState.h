@@ -21,10 +21,15 @@ private:
 	SpringEngine::Graphics::DirectionalLight mDirectionalLight;
 	SpringEngine::Graphics::StandardEffect mStandardEffect;
 
+	SpringEngine::Graphics::RenderObject mSky;
 	SpringEngine::Graphics::RenderObject mGround;
-	SpringEngine::Graphics::ModelId mCharacterId;
-	SpringEngine::Graphics::RenderGroup mCharacter;
-	SpringEngine::Graphics::Animator mCharacterAnimator;
+	SpringEngine::Graphics::ModelId mMaleCharacterId;
+	SpringEngine::Graphics::RenderGroup mMaleCharacter;
+	SpringEngine::Graphics::Animator mMaleAnimator;
+
+	SpringEngine::Graphics::ModelId mFemaleCharacterId;
+	SpringEngine::Graphics::RenderGroup mFemaleCharacter;
+	SpringEngine::Graphics::Animator mFemaleAnimator;
 
 	SpringEngine::Graphics::ParticleEffect mParticleEffect;
 	SpringEngine::ParticleSystem mFlair1;

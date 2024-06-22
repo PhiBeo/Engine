@@ -43,18 +43,18 @@
     dcl_texcoord1 v1  // vin<4,5>
     dcl_texcoord2 v2  // vin<6,7,8,9>
 
-#line 40 "C:\Users\LCI_Vancouver-DWaine\source\Workspaces\DubEngine\External\DirectXTK\src\Shaders\Common.fxh"
+#line 40 "C:\Users\LCV2042835.LCIEDUCATION\Documents\GitHub\Engine\External\DirectXTK\src\Shaders\Common.fxh"
     dp4 oPos.z, v0, c4  // ::VSBasicTxVcNoFog<8>
 
-#line 143 "C:\Users\LCI_Vancouver-DWaine\source\Workspaces\DubEngine\External\DirectXTK\src\Shaders\BasicEffect.fx"
+#line 143 "C:\Users\LCV2042835.LCIEDUCATION\Documents\GitHub\Engine\External\DirectXTK\src\Shaders\BasicEffect.fx"
     mul oT0, v2, c1  // ::VSBasicTxVcNoFog<0,1,2,3>
 
-#line 40 "C:\Users\LCI_Vancouver-DWaine\source\Workspaces\DubEngine\External\DirectXTK\src\Shaders\Common.fxh"
+#line 40 "C:\Users\LCV2042835.LCIEDUCATION\Documents\GitHub\Engine\External\DirectXTK\src\Shaders\Common.fxh"
     dp4 r0.x, v0, c2  // ::vout<0>
     dp4 r0.y, v0, c3  // ::vout<1>
     dp4 r0.z, v0, c5  // ::vout<3>
 
-#line 135 "C:\Users\LCI_Vancouver-DWaine\source\Workspaces\DubEngine\External\DirectXTK\src\Shaders\BasicEffect.fx"
+#line 135 "C:\Users\LCV2042835.LCIEDUCATION\Documents\GitHub\Engine\External\DirectXTK\src\Shaders\BasicEffect.fx"
     mad oPos.xy, r0.z, c0, r0  // ::VSBasicTxVcNoFog<6,7>
     mov oPos.w, r0.z  // ::VSBasicTxVcNoFog<9>
 
@@ -82,10 +82,10 @@ ret
 
 const BYTE BasicEffect_VSBasicTxVcNoFog[] =
 {
-     68,  88,  66,  67, 208, 233, 
-     39, 232, 151,  20,  58, 253, 
-    191,   3, 171, 171, 130, 246, 
-    108, 112,   1,   0,   0,   0, 
+     68,  88,  66,  67, 179, 187, 
+     57,  92, 120, 213, 203, 209, 
+    235, 156,  20,  53, 115, 178, 
+      7,   6,   1,   0,   0,   0, 
     156,   6,   0,   0,   4,   0, 
       0,   0,  48,   0,   0,   0, 
     144,   4,   0,   0, 180,   5, 
@@ -112,40 +112,40 @@ const BYTE BasicEffect_VSBasicTxVcNoFog[] =
       0,   0,   4,   3,   0,   0, 
      84,   1,   0,   0,  67,  58, 
      92,  85, 115, 101, 114, 115, 
-     92,  76,  67,  73,  95,  86, 
-     97, 110,  99, 111, 117, 118, 
-    101, 114,  45,  68,  87,  97, 
-    105, 110, 101,  92, 115, 111, 
-    117, 114,  99, 101,  92,  87, 
-    111, 114, 107, 115, 112,  97, 
-     99, 101, 115,  92,  68, 117, 
-     98,  69, 110, 103, 105, 110, 
-    101,  92,  69, 120, 116, 101, 
-    114, 110,  97, 108,  92,  68, 
-    105, 114, 101,  99, 116,  88, 
-     84,  75,  92, 115, 114,  99, 
-     92,  83, 104,  97, 100, 101, 
-    114, 115,  92,  67, 111, 109, 
-    109, 111, 110,  46, 102, 120, 
-    104,   0,  67,  58,  92,  85, 
-    115, 101, 114, 115,  92,  76, 
-     67,  73,  95,  86,  97, 110, 
-     99, 111, 117, 118, 101, 114, 
-     45,  68,  87,  97, 105, 110, 
-    101,  92, 115, 111, 117, 114, 
-     99, 101,  92,  87, 111, 114, 
-    107, 115, 112,  97,  99, 101, 
-    115,  92,  68, 117,  98,  69, 
-    110, 103, 105, 110, 101,  92, 
-     69, 120, 116, 101, 114, 110, 
-     97, 108,  92,  68, 105, 114, 
-    101,  99, 116,  88,  84,  75, 
-     92, 115, 114,  99,  92,  83, 
-    104,  97, 100, 101, 114, 115, 
-     92,  66,  97, 115, 105,  99, 
-     69, 102, 102, 101,  99, 116, 
-     46, 102, 120,   0,  40,   0, 
-      0,   0, 140,   0,   0,   0, 
+     92,  76,  67,  86,  50,  48, 
+     52,  50,  56,  51,  53,  46, 
+     76,  67,  73,  69,  68,  85, 
+     67,  65,  84,  73,  79,  78, 
+     92,  68, 111,  99, 117, 109, 
+    101, 110, 116, 115,  92,  71, 
+    105, 116,  72, 117,  98,  92, 
+     69, 110, 103, 105, 110, 101, 
+     92,  69, 120, 116, 101, 114, 
+    110,  97, 108,  92,  68, 105, 
+    114, 101,  99, 116,  88,  84, 
+     75,  92, 115, 114,  99,  92, 
+     83, 104,  97, 100, 101, 114, 
+    115,  92,  67, 111, 109, 109, 
+    111, 110,  46, 102, 120, 104, 
+      0,  67,  58,  92,  85, 115, 
+    101, 114, 115,  92,  76,  67, 
+     86,  50,  48,  52,  50,  56, 
+     51,  53,  46,  76,  67,  73, 
+     69,  68,  85,  67,  65,  84, 
+     73,  79,  78,  92,  68, 111, 
+     99, 117, 109, 101, 110, 116, 
+    115,  92,  71, 105, 116,  72, 
+    117,  98,  92,  69, 110, 103, 
+    105, 110, 101,  92,  69, 120, 
+    116, 101, 114, 110,  97, 108, 
+     92,  68, 105, 114, 101,  99, 
+    116,  88,  84,  75,  92, 115, 
+    114,  99,  92,  83, 104,  97, 
+    100, 101, 114, 115,  92,  66, 
+     97, 115, 105,  99,  69, 102, 
+    102, 101,  99, 116,  46, 102, 
+    120,   0, 171, 171,  40,   0, 
+      0,   0, 139,   0,   0,   0, 
       0,   0, 255, 255, 116,   3, 
       0,   0,   0,   0, 255, 255, 
     128,   3,   0,   0,   0,   0, 

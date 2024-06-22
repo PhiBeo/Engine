@@ -1,39 +1,39 @@
 ﻿  main.cpp
-C:\Users\Yarts\Documents\Engine\Framework\Graphics\Inc\BillBoardEffect.h(5,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+C:\Users\LCV2042835.LCIEDUCATION\Documents\GitHub\Engine\Framework\Graphics\Inc\BillBoardEffect.h(5,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
   (compiling source file 'main.cpp')
   
-C:\Users\Yarts\Documents\Engine\External\Bullet\BulletSoftBody\btSoftBody.h(38,50): warning C4305: 'initializing': truncation from 'double' to 'btScalar'
+C:\Users\LCV2042835.LCIEDUCATION\Documents\GitHub\Engine\External\Bullet\BulletSoftBody\btSoftBody.h(38,50): warning C4305: 'initializing': truncation from 'double' to 'btScalar'
   (compiling source file 'main.cpp')
   
-C:\Users\Yarts\Documents\Engine\External\Bullet\BulletSoftBody\btSoftBody.h(1232,17): warning C4244: 'initializing': conversion from 'double' to 'btScalar', possible loss of data
+C:\Users\LCV2042835.LCIEDUCATION\Documents\GitHub\Engine\External\Bullet\BulletSoftBody\btSoftBody.h(1232,17): warning C4244: 'initializing': conversion from 'double' to 'btScalar', possible loss of data
   (compiling source file 'main.cpp')
   
-C:\Users\Yarts\Documents\Engine\External\Bullet\BulletSoftBody\btSoftBody.h(1357,21): warning C4244: '+=': conversion from 'double' to 'btScalar', possible loss of data
+C:\Users\LCV2042835.LCIEDUCATION\Documents\GitHub\Engine\External\Bullet\BulletSoftBody\btSoftBody.h(1357,21): warning C4244: '+=': conversion from 'double' to 'btScalar', possible loss of data
   (compiling source file 'main.cpp')
   
-C:\Users\Yarts\Documents\Engine\External\Bullet\BulletSoftBody\btSoftBody.h(1361,21): warning C4244: 'initializing': conversion from 'double' to 'btScalar', possible loss of data
+C:\Users\LCV2042835.LCIEDUCATION\Documents\GitHub\Engine\External\Bullet\BulletSoftBody\btSoftBody.h(1361,21): warning C4244: 'initializing': conversion from 'double' to 'btScalar', possible loss of data
   (compiling source file 'main.cpp')
   
-C:\Users\Yarts\Documents\Engine\External\Bullet\BulletSoftBody\btSoftBody.h(1385,20): warning C4244: '=': conversion from 'double' to 'btScalar', possible loss of data
+C:\Users\LCV2042835.LCIEDUCATION\Documents\GitHub\Engine\External\Bullet\BulletSoftBody\btSoftBody.h(1385,20): warning C4244: '=': conversion from 'double' to 'btScalar', possible loss of data
   (compiling source file 'main.cpp')
   
-C:\Users\Yarts\Documents\Engine\External\Bullet\BulletSoftBody\btSoftBody.h(1387,23): warning C4244: '=': conversion from 'double' to 'btScalar', possible loss of data
+C:\Users\LCV2042835.LCIEDUCATION\Documents\GitHub\Engine\External\Bullet\BulletSoftBody\btSoftBody.h(1387,23): warning C4244: '=': conversion from 'double' to 'btScalar', possible loss of data
   (compiling source file 'main.cpp')
   
-C:\Users\Yarts\Documents\Engine\Tools\ModelImporter\main.cpp(37,26): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\Yarts\Documents\Engine\Tools\ModelImporter\main.cpp(135,4): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Yarts\Documents\Engine\External\Bullet\BulletSoftBody\btSoftBody.h(1269,17): warning C4244: 'initializing': conversion from 'double' to 'btScalar', possible loss of data
+C:\Users\LCV2042835.LCIEDUCATION\Documents\GitHub\Engine\Tools\ModelImporter\main.cpp(37,26): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\LCV2042835.LCIEDUCATION\Documents\GitHub\Engine\Tools\ModelImporter\main.cpp(135,4): warning C4018: '<': signed/unsigned mismatch
+C:\Users\LCV2042835.LCIEDUCATION\Documents\GitHub\Engine\External\Bullet\BulletSoftBody\btSoftBody.h(1269,17): warning C4244: 'initializing': conversion from 'double' to 'btScalar', possible loss of data
   (compiling source file 'main.cpp')
-  C:\Users\Yarts\Documents\Engine\External\Bullet\BulletSoftBody\btSoftBody.h(1269,17):
+  C:\Users\LCV2042835.LCIEDUCATION\Documents\GitHub\Engine\External\Bullet\BulletSoftBody\btSoftBody.h(1269,17):
   the template instantiation context (the oldest one first) is
-  	C:\Users\Yarts\Documents\Engine\External\Bullet\BulletSoftBody\btSoftBody.h(1303,4):
+  	C:\Users\LCV2042835.LCIEDUCATION\Documents\GitHub\Engine\External\Bullet\BulletSoftBody\btSoftBody.h(1303,4):
   	see reference to function template instantiation 'void btSoftBody::updateFace<btDbvtNode>(DBVTNODE *,bool,bool)' being compiled
           with
           [
               DBVTNODE=btDbvtNode
           ]
   
-  ModelImporter.vcxproj -> C:\Users\Yarts\Documents\Engine\x64\Debug\ModelImporter.exe
-  C:\Users\Yarts\Documents\Engine\External\assimp-5.2.5\bin\assimp-vc143-mt.dll
-  C:\Users\Yarts\Documents\Engine\External\assimp-5.2.5\bin\assimp-vc143-mtd.dll
+  ModelImporter.vcxproj -> C:\Users\LCV2042835.LCIEDUCATION\Documents\GitHub\Engine\x64\Debug\ModelImporter.exe
+  C:\Users\LCV2042835.LCIEDUCATION\Documents\GitHub\Engine\External\assimp-5.2.5\bin\assimp-vc143-mt.dll
+  C:\Users\LCV2042835.LCIEDUCATION\Documents\GitHub\Engine\External\assimp-5.2.5\bin\assimp-vc143-mtd.dll
           2 file(s) copied.

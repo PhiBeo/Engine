@@ -117,7 +117,7 @@ VS_OUTPUT VS(VS_INPUT input)
     }
     
 	VS_OUTPUT output;
-	output.position = mul(float4(localPosition, 1.0f), wvp);
+    output.position = mul(float4(localPosition, 1.0f), toNDC);
     output.worldNormal = mul(input.normal, (float3x3) toWorld);
     output.worldTangent = mul(input.tangent, (float3x3) toWorld);
 	output.texCoord = input.texCoord;

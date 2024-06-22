@@ -1,4 +1,64 @@
 ﻿  GameState.cpp
+C:\Users\LCV2042835.LCIEDUCATION\Documents\GitHub\Engine\Framework\Graphics\Inc\BillBoardEffect.h(5,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file 'GameState.cpp')
+  
+C:\Users\LCV2042835.LCIEDUCATION\Documents\GitHub\Engine\External\Bullet\BulletSoftBody\btSoftBody.h(38,50): warning C4305: 'initializing': truncation from 'double' to 'btScalar'
+  (compiling source file 'GameState.cpp')
+  
+C:\Users\LCV2042835.LCIEDUCATION\Documents\GitHub\Engine\External\Bullet\BulletSoftBody\btSoftBody.h(1232,17): warning C4244: 'initializing': conversion from 'double' to 'btScalar', possible loss of data
+  (compiling source file 'GameState.cpp')
+  
+C:\Users\LCV2042835.LCIEDUCATION\Documents\GitHub\Engine\External\Bullet\BulletSoftBody\btSoftBody.h(1357,21): warning C4244: '+=': conversion from 'double' to 'btScalar', possible loss of data
+  (compiling source file 'GameState.cpp')
+  
+C:\Users\LCV2042835.LCIEDUCATION\Documents\GitHub\Engine\External\Bullet\BulletSoftBody\btSoftBody.h(1361,21): warning C4244: 'initializing': conversion from 'double' to 'btScalar', possible loss of data
+  (compiling source file 'GameState.cpp')
+  
+C:\Users\LCV2042835.LCIEDUCATION\Documents\GitHub\Engine\External\Bullet\BulletSoftBody\btSoftBody.h(1385,20): warning C4244: '=': conversion from 'double' to 'btScalar', possible loss of data
+  (compiling source file 'GameState.cpp')
+  
+C:\Users\LCV2042835.LCIEDUCATION\Documents\GitHub\Engine\External\Bullet\BulletSoftBody\btSoftBody.h(1387,23): warning C4244: '=': conversion from 'double' to 'btScalar', possible loss of data
+  (compiling source file 'GameState.cpp')
+  
   WinMain.cpp
+C:\Users\LCV2042835.LCIEDUCATION\Documents\GitHub\Engine\VGP242\07_HelloRenderTarget\GameState.cpp(19,16): error C2039: 'mDiffuseTexture': is not a member of 'SpringEngine::Graphics::RenderObject'
+  C:\Users\LCV2042835.LCIEDUCATION\Documents\GitHub\Engine\Framework\Graphics\Inc\TerrainEffect.h(14,8):
+  see declaration of 'SpringEngine::Graphics::RenderObject'
+  
+C:\Users\LCV2042835.LCIEDUCATION\Documents\GitHub\Engine\VGP242\07_HelloRenderTarget\GameState.cpp(23,17): error C2039: 'mDiffuseTexture': is not a member of 'SpringEngine::Graphics::RenderObject'
+  C:\Users\LCV2042835.LCIEDUCATION\Documents\GitHub\Engine\Framework\Graphics\Inc\TerrainEffect.h(14,8):
+  see declaration of 'SpringEngine::Graphics::RenderObject'
+  
+C:\Users\LCV2042835.LCIEDUCATION\Documents\GitHub\Engine\Framework\Graphics\Inc\BillBoardEffect.h(5,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file 'WinMain.cpp')
+  
+C:\Users\LCV2042835.LCIEDUCATION\Documents\GitHub\Engine\External\Bullet\BulletSoftBody\btSoftBody.h(38,50): warning C4305: 'initializing': truncation from 'double' to 'btScalar'
+  (compiling source file 'WinMain.cpp')
+  
+C:\Users\LCV2042835.LCIEDUCATION\Documents\GitHub\Engine\External\Bullet\BulletSoftBody\btSoftBody.h(1232,17): warning C4244: 'initializing': conversion from 'double' to 'btScalar', possible loss of data
+  (compiling source file 'WinMain.cpp')
+  
+C:\Users\LCV2042835.LCIEDUCATION\Documents\GitHub\Engine\External\Bullet\BulletSoftBody\btSoftBody.h(1357,21): warning C4244: '+=': conversion from 'double' to 'btScalar', possible loss of data
+  (compiling source file 'WinMain.cpp')
+  
+C:\Users\LCV2042835.LCIEDUCATION\Documents\GitHub\Engine\External\Bullet\BulletSoftBody\btSoftBody.h(1361,21): warning C4244: 'initializing': conversion from 'double' to 'btScalar', possible loss of data
+  (compiling source file 'WinMain.cpp')
+  
+C:\Users\LCV2042835.LCIEDUCATION\Documents\GitHub\Engine\External\Bullet\BulletSoftBody\btSoftBody.h(1385,20): warning C4244: '=': conversion from 'double' to 'btScalar', possible loss of data
+  (compiling source file 'WinMain.cpp')
+  
+C:\Users\LCV2042835.LCIEDUCATION\Documents\GitHub\Engine\External\Bullet\BulletSoftBody\btSoftBody.h(1387,23): warning C4244: '=': conversion from 'double' to 'btScalar', possible loss of data
+  (compiling source file 'WinMain.cpp')
+  
+C:\Users\LCV2042835.LCIEDUCATION\Documents\GitHub\Engine\External\Bullet\BulletSoftBody\btSoftBody.h(1269,17): warning C4244: 'initializing': conversion from 'double' to 'btScalar', possible loss of data
+  (compiling source file 'WinMain.cpp')
+  C:\Users\LCV2042835.LCIEDUCATION\Documents\GitHub\Engine\External\Bullet\BulletSoftBody\btSoftBody.h(1269,17):
+  the template instantiation context (the oldest one first) is
+  	C:\Users\LCV2042835.LCIEDUCATION\Documents\GitHub\Engine\External\Bullet\BulletSoftBody\btSoftBody.h(1303,4):
+  	see reference to function template instantiation 'void btSoftBody::updateFace<btDbvtNode>(DBVTNODE *,bool,bool)' being compiled
+          with
+          [
+              DBVTNODE=btDbvtNode
+          ]
+  
   Generating Code...
-  07_HelloRenderTarget.vcxproj -> C:\Users\Yarts\Documents\VGP330\x64\Debug\07_HelloRenderTarget.exe

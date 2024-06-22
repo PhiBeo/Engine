@@ -44,20 +44,20 @@
     dcl t3  // pin<9,10,11,12>
     dcl_2d s0
 
-#line 361 "C:\Users\LCI_Vancouver-DWaine\source\Workspaces\DubEngine\External\DirectXTK\src\Shaders\SkinnedEffect.fx"
+#line 361 "C:\Users\LCV2042835.LCIEDUCATION\Documents\GitHub\Engine\External\DirectXTK\src\Shaders\SkinnedEffect.fx"
     texld r0, t0, s0
     add r1.xyz, -t1, c12
     dp3 r1.w, r1, r1
     rsq r1.w, r1.w
 
-#line 30 "C:\Users\LCI_Vancouver-DWaine\source\Workspaces\DubEngine\External\DirectXTK\src\Shaders\Lighting.fxh"
+#line 30 "C:\Users\LCV2042835.LCIEDUCATION\Documents\GitHub\Engine\External\DirectXTK\src\Shaders\Lighting.fxh"
     mad r2.xyz, r1, r1.w, -c3
     nrm r3.xyz, r2  // ::halfVectors<0,1,2>
 
-#line 364 "C:\Users\LCI_Vancouver-DWaine\source\Workspaces\DubEngine\External\DirectXTK\src\Shaders\SkinnedEffect.fx"
+#line 364 "C:\Users\LCV2042835.LCIEDUCATION\Documents\GitHub\Engine\External\DirectXTK\src\Shaders\SkinnedEffect.fx"
     nrm r2.xyz, t2  // ::worldNormal<0,1,2>
 
-#line 34 "C:\Users\LCI_Vancouver-DWaine\source\Workspaces\DubEngine\External\DirectXTK\src\Shaders\Lighting.fxh"
+#line 34 "C:\Users\LCV2042835.LCIEDUCATION\Documents\GitHub\Engine\External\DirectXTK\src\Shaders\Lighting.fxh"
     dp3 r3.x, r3, r2  // ::dotH<0>
 
 #line 30
@@ -99,20 +99,20 @@
     mad r1.xyz, r1.z, c11, r3
     mul r1.xyz, r1, c2  // ::result<3,4,5>
 
-#line 361 "C:\Users\LCI_Vancouver-DWaine\source\Workspaces\DubEngine\External\DirectXTK\src\Shaders\SkinnedEffect.fx"
+#line 361 "C:\Users\LCV2042835.LCIEDUCATION\Documents\GitHub\Engine\External\DirectXTK\src\Shaders\SkinnedEffect.fx"
     mul r0, r0, t3  // ::color<0,1,2,3>
 
-#line 23 "C:\Users\LCI_Vancouver-DWaine\source\Workspaces\DubEngine\External\DirectXTK\src\Shaders\Common.fxh"
+#line 23 "C:\Users\LCV2042835.LCIEDUCATION\Documents\GitHub\Engine\External\DirectXTK\src\Shaders\Common.fxh"
     mul r1.xyz, r0.w, r1
 
-#line 43 "C:\Users\LCI_Vancouver-DWaine\source\Workspaces\DubEngine\External\DirectXTK\src\Shaders\Lighting.fxh"
+#line 43 "C:\Users\LCV2042835.LCIEDUCATION\Documents\GitHub\Engine\External\DirectXTK\src\Shaders\Lighting.fxh"
     mul r3.xyz, r2.y, c7
     mad r3.xyz, r2.x, c6, r3
     mad r2.xyz, r2.z, c8, r3
     mov r3.xyz, c0  // Parameters::DiffuseColor<0,1,2>
     mad r2.xyz, r2, r3, c1  // ::result<0,1,2>
 
-#line 23 "C:\Users\LCI_Vancouver-DWaine\source\Workspaces\DubEngine\External\DirectXTK\src\Shaders\Common.fxh"
+#line 23 "C:\Users\LCV2042835.LCIEDUCATION\Documents\GitHub\Engine\External\DirectXTK\src\Shaders\Common.fxh"
     mad r1.xyz, r0, r2, r1  // AddSpecular::color<0,1,2>
 
 #line 17
@@ -185,10 +185,10 @@ ret
 
 const BYTE SkinnedEffect_PSSkinnedPixelLighting[] =
 {
-     68,  88,  66,  67,   6, 209, 
-    164, 151, 124,  54, 231, 193, 
-    119, 136, 157, 225,  34, 168, 
-     58, 150,   1,   0,   0,   0, 
+     68,  88,  66,  67,  36, 171, 
+     54, 202, 248, 195, 167, 255, 
+     64, 196,  69, 155,  23, 234, 
+    118,  94,   1,   0,   0,   0, 
     136,  17,   0,   0,   4,   0, 
       0,   0,  48,   0,   0,   0, 
     100,  10,   0,   0, 212,  16, 
@@ -213,58 +213,58 @@ const BYTE SkinnedEffect_PSSkinnedPixelLighting[] =
       0,   0, 148,   5,   0,   0, 
      44,   3,   0,   0,  67,  58, 
      92,  85, 115, 101, 114, 115, 
-     92,  76,  67,  73,  95,  86, 
-     97, 110,  99, 111, 117, 118, 
-    101, 114,  45,  68,  87,  97, 
-    105, 110, 101,  92, 115, 111, 
-    117, 114,  99, 101,  92,  87, 
-    111, 114, 107, 115, 112,  97, 
-     99, 101, 115,  92,  68, 117, 
-     98,  69, 110, 103, 105, 110, 
-    101,  92,  69, 120, 116, 101, 
-    114, 110,  97, 108,  92,  68, 
-    105, 114, 101,  99, 116,  88, 
-     84,  75,  92, 115, 114,  99, 
-     92,  83, 104,  97, 100, 101, 
-    114, 115,  92,  83, 107, 105, 
-    110, 110, 101, 100,  69, 102, 
-    102, 101,  99, 116,  46, 102, 
-    120,   0,  67,  58,  92,  85, 
-    115, 101, 114, 115,  92,  76, 
-     67,  73,  95,  86,  97, 110, 
-     99, 111, 117, 118, 101, 114, 
-     45,  68,  87,  97, 105, 110, 
-    101,  92, 115, 111, 117, 114, 
-     99, 101,  92,  87, 111, 114, 
-    107, 115, 112,  97,  99, 101, 
-    115,  92,  68, 117,  98,  69, 
-    110, 103, 105, 110, 101,  92, 
-     69, 120, 116, 101, 114, 110, 
-     97, 108,  92,  68, 105, 114, 
-    101,  99, 116,  88,  84,  75, 
-     92, 115, 114,  99,  92,  83, 
-    104,  97, 100, 101, 114, 115, 
-     92,  76, 105, 103, 104, 116, 
-    105, 110, 103,  46, 102, 120, 
-    104,   0,  67,  58,  92,  85, 
-    115, 101, 114, 115,  92,  76, 
-     67,  73,  95,  86,  97, 110, 
-     99, 111, 117, 118, 101, 114, 
-     45,  68,  87,  97, 105, 110, 
-    101,  92, 115, 111, 117, 114, 
-     99, 101,  92,  87, 111, 114, 
-    107, 115, 112,  97,  99, 101, 
-    115,  92,  68, 117,  98,  69, 
-    110, 103, 105, 110, 101,  92, 
-     69, 120, 116, 101, 114, 110, 
-     97, 108,  92,  68, 105, 114, 
-    101,  99, 116,  88,  84,  75, 
-     92, 115, 114,  99,  92,  83, 
-    104,  97, 100, 101, 114, 115, 
-     92,  67, 111, 109, 109, 111, 
-    110,  46, 102, 120, 104,   0, 
-     40,   0,   0,   0, 146,   0, 
-      0,   0, 248,   0,   0,   0, 
+     92,  76,  67,  86,  50,  48, 
+     52,  50,  56,  51,  53,  46, 
+     76,  67,  73,  69,  68,  85, 
+     67,  65,  84,  73,  79,  78, 
+     92,  68, 111,  99, 117, 109, 
+    101, 110, 116, 115,  92,  71, 
+    105, 116,  72, 117,  98,  92, 
+     69, 110, 103, 105, 110, 101, 
+     92,  69, 120, 116, 101, 114, 
+    110,  97, 108,  92,  68, 105, 
+    114, 101,  99, 116,  88,  84, 
+     75,  92, 115, 114,  99,  92, 
+     83, 104,  97, 100, 101, 114, 
+    115,  92,  83, 107, 105, 110, 
+    110, 101, 100,  69, 102, 102, 
+    101,  99, 116,  46, 102, 120, 
+      0,  67,  58,  92,  85, 115, 
+    101, 114, 115,  92,  76,  67, 
+     86,  50,  48,  52,  50,  56, 
+     51,  53,  46,  76,  67,  73, 
+     69,  68,  85,  67,  65,  84, 
+     73,  79,  78,  92,  68, 111, 
+     99, 117, 109, 101, 110, 116, 
+    115,  92,  71, 105, 116,  72, 
+    117,  98,  92,  69, 110, 103, 
+    105, 110, 101,  92,  69, 120, 
+    116, 101, 114, 110,  97, 108, 
+     92,  68, 105, 114, 101,  99, 
+    116,  88,  84,  75,  92, 115, 
+    114,  99,  92,  83, 104,  97, 
+    100, 101, 114, 115,  92,  76, 
+    105, 103, 104, 116, 105, 110, 
+    103,  46, 102, 120, 104,   0, 
+     67,  58,  92,  85, 115, 101, 
+    114, 115,  92,  76,  67,  86, 
+     50,  48,  52,  50,  56,  51, 
+     53,  46,  76,  67,  73,  69, 
+     68,  85,  67,  65,  84,  73, 
+     79,  78,  92,  68, 111,  99, 
+    117, 109, 101, 110, 116, 115, 
+     92,  71, 105, 116,  72, 117, 
+     98,  92,  69, 110, 103, 105, 
+    110, 101,  92,  69, 120, 116, 
+    101, 114, 110,  97, 108,  92, 
+     68, 105, 114, 101,  99, 116, 
+     88,  84,  75,  92, 115, 114, 
+     99,  92,  83, 104,  97, 100, 
+    101, 114, 115,  92,  67, 111, 
+    109, 109, 111, 110,  46, 102, 
+    120, 104,   0, 171, 171, 171, 
+     40,   0,   0,   0, 145,   0, 
+      0,   0, 246,   0,   0,   0, 
       0,   0, 255, 255, 224,   6, 
       0,   0,   0,   0, 255, 255, 
     248,   6,   0,   0,   0,   0, 

@@ -8,6 +8,12 @@
 
 -scale 0.01 ../../Assets/Models/Character/MaleDancer/MaleDancer.fbx ../../Assets/Models/Character/MaleDancer/MaleDancer.fbx
 -scale 0.01 -animOnly 1 ../../Assets/Models/Character/MaleDancer/MaleBboy.fbx ../../Assets/Models/Character/MaleDancer/MaleBboy.fbx
--scale 0.01 ../../Assets/Models/Character/MaleDancer/MaleHip.fbx ../../Assets/Models/Character/MaleDancer/MaleHip.fbx
--scale 0.01 ../../Assets/Models/Character/MaleDancer/MaleRobot.fbx ../../Assets/Models/Character/MaleDancer/MaleRobot.fbx
--scale 0.01 ../../Assets/Models/Character/MaleDancer/MaleSwing.fbx ../../Assets/Models/Character/MaleDancer/MaleSwing.fbx
+-scale 0.01 -animOnly 1 ../../Assets/Models/Character/MaleDancer/MaleHip.fbx ../../Assets/Models/Character/MaleDancer/MaleHip.fbx
+-scale 0.01 -animOnly 1 ../../Assets/Models/Character/MaleDancer/MaleRobot.fbx ../../Assets/Models/Character/MaleDancer/MaleRobot.fbx
+-scale 0.01 -animOnly 1 ../../Assets/Models/Character/MaleDancer/MaleSwing.fbx ../../Assets/Models/Character/MaleDancer/MaleSwing.fbx
+
+-scale 0.01 ../../Assets/Models/Character/Michelle/Michelle.fbx ../../Assets/Models/Character/Michelle/Michelle.fbx
+-scale 0.01 -animOnly 1 ../../Assets/Models/Character/Michelle/MichelleShuffling.fbx ../../Assets/Models/Character/Michelle/MichelleShuffling.fbx
+-scale 0.01 -animOnly 1 ../../Assets/Models/Character/Michelle/MichelleUprock.fbx ../../Assets/Models/Character/Michelle/MichelleUprock.fbx
+-scale 0.01 -animOnly 1 ../../Assets/Models/Character/Michelle/MichelleRumba.fbx ../../Assets/Models/Character/Michelle/MichelleRumba.fbx
+-scale 0.01 -animOnly 1 ../../Assets/Models/Character/Michelle/MichelleFlair.fbx ../../Assets/Models/Character/Michelle/MichelleFlair.fbx

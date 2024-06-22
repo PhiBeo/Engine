@@ -1,34 +1,34 @@
 ﻿  GameState.cpp
-C:\Users\Yarts\Documents\Engine\Framework\Graphics\Inc\BillBoardEffect.h(5,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+C:\Users\LCV2042835.LCIEDUCATION\Documents\GitHub\Engine\Framework\Graphics\Inc\BillBoardEffect.h(5,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
   (compiling source file 'GameState.cpp')
   
-C:\Users\Yarts\Documents\Engine\External\Bullet\BulletSoftBody\btSoftBody.h(38,50): warning C4305: 'initializing': truncation from 'double' to 'btScalar'
+C:\Users\LCV2042835.LCIEDUCATION\Documents\GitHub\Engine\External\Bullet\BulletSoftBody\btSoftBody.h(38,50): warning C4305: 'initializing': truncation from 'double' to 'btScalar'
   (compiling source file 'GameState.cpp')
   
-C:\Users\Yarts\Documents\Engine\External\Bullet\BulletSoftBody\btSoftBody.h(1232,17): warning C4244: 'initializing': conversion from 'double' to 'btScalar', possible loss of data
+C:\Users\LCV2042835.LCIEDUCATION\Documents\GitHub\Engine\External\Bullet\BulletSoftBody\btSoftBody.h(1232,17): warning C4244: 'initializing': conversion from 'double' to 'btScalar', possible loss of data
   (compiling source file 'GameState.cpp')
   
-C:\Users\Yarts\Documents\Engine\External\Bullet\BulletSoftBody\btSoftBody.h(1357,21): warning C4244: '+=': conversion from 'double' to 'btScalar', possible loss of data
+C:\Users\LCV2042835.LCIEDUCATION\Documents\GitHub\Engine\External\Bullet\BulletSoftBody\btSoftBody.h(1357,21): warning C4244: '+=': conversion from 'double' to 'btScalar', possible loss of data
   (compiling source file 'GameState.cpp')
   
-C:\Users\Yarts\Documents\Engine\External\Bullet\BulletSoftBody\btSoftBody.h(1361,21): warning C4244: 'initializing': conversion from 'double' to 'btScalar', possible loss of data
+C:\Users\LCV2042835.LCIEDUCATION\Documents\GitHub\Engine\External\Bullet\BulletSoftBody\btSoftBody.h(1361,21): warning C4244: 'initializing': conversion from 'double' to 'btScalar', possible loss of data
   (compiling source file 'GameState.cpp')
   
-C:\Users\Yarts\Documents\Engine\External\Bullet\BulletSoftBody\btSoftBody.h(1385,20): warning C4244: '=': conversion from 'double' to 'btScalar', possible loss of data
+C:\Users\LCV2042835.LCIEDUCATION\Documents\GitHub\Engine\External\Bullet\BulletSoftBody\btSoftBody.h(1385,20): warning C4244: '=': conversion from 'double' to 'btScalar', possible loss of data
   (compiling source file 'GameState.cpp')
   
-C:\Users\Yarts\Documents\Engine\External\Bullet\BulletSoftBody\btSoftBody.h(1387,23): warning C4244: '=': conversion from 'double' to 'btScalar', possible loss of data
+C:\Users\LCV2042835.LCIEDUCATION\Documents\GitHub\Engine\External\Bullet\BulletSoftBody\btSoftBody.h(1387,23): warning C4244: '=': conversion from 'double' to 'btScalar', possible loss of data
   (compiling source file 'GameState.cpp')
   
-C:\Users\Yarts\Documents\Engine\VGP334\19_SoftBody\GameState.cpp(30,17): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\Yarts\Documents\Engine\VGP334\19_SoftBody\GameState.cpp(33,134): warning C4267: 'argument': conversion from 'size_t' to 'uint32_t', possible loss of data
-C:\Users\Yarts\Documents\Engine\VGP334\19_SoftBody\GameState.cpp(33,80): warning C4267: 'argument': conversion from 'size_t' to 'uint32_t', possible loss of data
-C:\Users\Yarts\Documents\Engine\VGP334\19_SoftBody\GameState.cpp(54,79): warning C4267: 'argument': conversion from 'size_t' to 'uint32_t', possible loss of data
-C:\Users\Yarts\Documents\Engine\External\Bullet\BulletSoftBody\btSoftBody.h(1269,17): warning C4244: 'initializing': conversion from 'double' to 'btScalar', possible loss of data
+C:\Users\LCV2042835.LCIEDUCATION\Documents\GitHub\Engine\VGP334\19_SoftBody\GameState.cpp(30,17): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\LCV2042835.LCIEDUCATION\Documents\GitHub\Engine\VGP334\19_SoftBody\GameState.cpp(33,134): warning C4267: 'argument': conversion from 'size_t' to 'uint32_t', possible loss of data
+C:\Users\LCV2042835.LCIEDUCATION\Documents\GitHub\Engine\VGP334\19_SoftBody\GameState.cpp(33,80): warning C4267: 'argument': conversion from 'size_t' to 'uint32_t', possible loss of data
+C:\Users\LCV2042835.LCIEDUCATION\Documents\GitHub\Engine\VGP334\19_SoftBody\GameState.cpp(54,79): warning C4267: 'argument': conversion from 'size_t' to 'uint32_t', possible loss of data
+C:\Users\LCV2042835.LCIEDUCATION\Documents\GitHub\Engine\External\Bullet\BulletSoftBody\btSoftBody.h(1269,17): warning C4244: 'initializing': conversion from 'double' to 'btScalar', possible loss of data
   (compiling source file 'GameState.cpp')
-  C:\Users\Yarts\Documents\Engine\External\Bullet\BulletSoftBody\btSoftBody.h(1269,17):
+  C:\Users\LCV2042835.LCIEDUCATION\Documents\GitHub\Engine\External\Bullet\BulletSoftBody\btSoftBody.h(1269,17):
   the template instantiation context (the oldest one first) is
-  	C:\Users\Yarts\Documents\Engine\External\Bullet\BulletSoftBody\btSoftBody.h(1303,4):
+  	C:\Users\LCV2042835.LCIEDUCATION\Documents\GitHub\Engine\External\Bullet\BulletSoftBody\btSoftBody.h(1303,4):
   	see reference to function template instantiation 'void btSoftBody::updateFace<btDbvtNode>(DBVTNODE *,bool,bool)' being compiled
           with
           [
@@ -36,32 +36,32 @@ C:\Users\Yarts\Documents\Engine\External\Bullet\BulletSoftBody\btSoftBody.h(1269
           ]
   
   WinMain.cpp
-C:\Users\Yarts\Documents\Engine\Framework\Graphics\Inc\BillBoardEffect.h(5,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+C:\Users\LCV2042835.LCIEDUCATION\Documents\GitHub\Engine\Framework\Graphics\Inc\BillBoardEffect.h(5,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
   (compiling source file 'WinMain.cpp')
   
-C:\Users\Yarts\Documents\Engine\External\Bullet\BulletSoftBody\btSoftBody.h(38,50): warning C4305: 'initializing': truncation from 'double' to 'btScalar'
+C:\Users\LCV2042835.LCIEDUCATION\Documents\GitHub\Engine\External\Bullet\BulletSoftBody\btSoftBody.h(38,50): warning C4305: 'initializing': truncation from 'double' to 'btScalar'
   (compiling source file 'WinMain.cpp')
   
-C:\Users\Yarts\Documents\Engine\External\Bullet\BulletSoftBody\btSoftBody.h(1232,17): warning C4244: 'initializing': conversion from 'double' to 'btScalar', possible loss of data
+C:\Users\LCV2042835.LCIEDUCATION\Documents\GitHub\Engine\External\Bullet\BulletSoftBody\btSoftBody.h(1232,17): warning C4244: 'initializing': conversion from 'double' to 'btScalar', possible loss of data
   (compiling source file 'WinMain.cpp')
   
-C:\Users\Yarts\Documents\Engine\External\Bullet\BulletSoftBody\btSoftBody.h(1357,21): warning C4244: '+=': conversion from 'double' to 'btScalar', possible loss of data
+C:\Users\LCV2042835.LCIEDUCATION\Documents\GitHub\Engine\External\Bullet\BulletSoftBody\btSoftBody.h(1357,21): warning C4244: '+=': conversion from 'double' to 'btScalar', possible loss of data
   (compiling source file 'WinMain.cpp')
   
-C:\Users\Yarts\Documents\Engine\External\Bullet\BulletSoftBody\btSoftBody.h(1361,21): warning C4244: 'initializing': conversion from 'double' to 'btScalar', possible loss of data
+C:\Users\LCV2042835.LCIEDUCATION\Documents\GitHub\Engine\External\Bullet\BulletSoftBody\btSoftBody.h(1361,21): warning C4244: 'initializing': conversion from 'double' to 'btScalar', possible loss of data
   (compiling source file 'WinMain.cpp')
   
-C:\Users\Yarts\Documents\Engine\External\Bullet\BulletSoftBody\btSoftBody.h(1385,20): warning C4244: '=': conversion from 'double' to 'btScalar', possible loss of data
+C:\Users\LCV2042835.LCIEDUCATION\Documents\GitHub\Engine\External\Bullet\BulletSoftBody\btSoftBody.h(1385,20): warning C4244: '=': conversion from 'double' to 'btScalar', possible loss of data
   (compiling source file 'WinMain.cpp')
   
-C:\Users\Yarts\Documents\Engine\External\Bullet\BulletSoftBody\btSoftBody.h(1387,23): warning C4244: '=': conversion from 'double' to 'btScalar', possible loss of data
+C:\Users\LCV2042835.LCIEDUCATION\Documents\GitHub\Engine\External\Bullet\BulletSoftBody\btSoftBody.h(1387,23): warning C4244: '=': conversion from 'double' to 'btScalar', possible loss of data
   (compiling source file 'WinMain.cpp')
   
-C:\Users\Yarts\Documents\Engine\External\Bullet\BulletSoftBody\btSoftBody.h(1269,17): warning C4244: 'initializing': conversion from 'double' to 'btScalar', possible loss of data
+C:\Users\LCV2042835.LCIEDUCATION\Documents\GitHub\Engine\External\Bullet\BulletSoftBody\btSoftBody.h(1269,17): warning C4244: 'initializing': conversion from 'double' to 'btScalar', possible loss of data
   (compiling source file 'WinMain.cpp')
-  C:\Users\Yarts\Documents\Engine\External\Bullet\BulletSoftBody\btSoftBody.h(1269,17):
+  C:\Users\LCV2042835.LCIEDUCATION\Documents\GitHub\Engine\External\Bullet\BulletSoftBody\btSoftBody.h(1269,17):
   the template instantiation context (the oldest one first) is
-  	C:\Users\Yarts\Documents\Engine\External\Bullet\BulletSoftBody\btSoftBody.h(1303,4):
+  	C:\Users\LCV2042835.LCIEDUCATION\Documents\GitHub\Engine\External\Bullet\BulletSoftBody\btSoftBody.h(1303,4):
   	see reference to function template instantiation 'void btSoftBody::updateFace<btDbvtNode>(DBVTNODE *,bool,bool)' being compiled
           with
           [
@@ -69,4 +69,4 @@ C:\Users\Yarts\Documents\Engine\External\Bullet\BulletSoftBody\btSoftBody.h(1269
           ]
   
   Generating Code...
-  19_SoftBody.vcxproj -> C:\Users\Yarts\Documents\Engine\x64\Debug\19_SoftBody.exe
+  19_SoftBody.vcxproj -> C:\Users\LCV2042835.LCIEDUCATION\Documents\GitHub\Engine\x64\Debug\19_SoftBody.exe

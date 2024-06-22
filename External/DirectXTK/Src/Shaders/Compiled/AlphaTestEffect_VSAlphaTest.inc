@@ -43,7 +43,7 @@
     dcl_texcoord v0  // vin<0,1,2,3>
     dcl_texcoord1 v1  // vin<4,5>
 
-#line 40 "C:\Users\LCI_Vancouver-DWaine\source\Workspaces\DubEngine\External\DirectXTK\src\Shaders\Common.fxh"
+#line 40 "C:\Users\LCV2042835.LCIEDUCATION\Documents\GitHub\Engine\External\DirectXTK\src\Shaders\Common.fxh"
     dp4 oPos.z, v0, c5  // ::VSAlphaTest<12>
 
 #line 11
@@ -56,15 +56,15 @@
     dp4 r0.y, v0, c4  // ::vout<1>
     dp4 r0.z, v0, c6  // ::vout<3>
 
-#line 26 "C:\Users\LCI_Vancouver-DWaine\source\Workspaces\DubEngine\External\DirectXTK\src\Shaders\AlphaTestEffect.fx"
+#line 26 "C:\Users\LCV2042835.LCIEDUCATION\Documents\GitHub\Engine\External\DirectXTK\src\Shaders\AlphaTestEffect.fx"
     mad oPos.xy, r0.z, c0, r0  // ::VSAlphaTest<10,11>
     mov oPos.w, r0.z  // ::VSAlphaTest<13>
 
-#line 41 "C:\Users\LCI_Vancouver-DWaine\source\Workspaces\DubEngine\External\DirectXTK\src\Shaders\Common.fxh"
+#line 41 "C:\Users\LCV2042835.LCIEDUCATION\Documents\GitHub\Engine\External\DirectXTK\src\Shaders\Common.fxh"
     mov oT0, c1  // ::VSAlphaTest<0,1,2,3>
     mov oT1.xyz, c7.x  // ::VSAlphaTest<4,5,6>
 
-#line 33 "C:\Users\LCI_Vancouver-DWaine\source\Workspaces\DubEngine\External\DirectXTK\src\Shaders\AlphaTestEffect.fx"
+#line 33 "C:\Users\LCV2042835.LCIEDUCATION\Documents\GitHub\Engine\External\DirectXTK\src\Shaders\AlphaTestEffect.fx"
     mov oT2.xy, v1  // ::VSAlphaTest<8,9>
 
 // approximately 12 instruction slots used
@@ -90,10 +90,10 @@ ret
 
 const BYTE AlphaTestEffect_VSAlphaTest[] =
 {
-     68,  88,  66,  67, 106, 189, 
-     67, 235,  67, 171,   6,  15, 
-    193,  75,  35, 153,  90, 125, 
-    135,  51,   1,   0,   0,   0, 
+     68,  88,  66,  67, 175,  63, 
+     48, 199, 215, 146,  59,  47, 
+     79,  26, 126,  47, 196, 181, 
+    117,  52,   1,   0,   0,   0, 
      52,   7,   0,   0,   4,   0, 
       0,   0,  48,   0,   0,   0, 
     244,   4,   0,   0,  80,   6, 
@@ -120,41 +120,41 @@ const BYTE AlphaTestEffect_VSAlphaTest[] =
       0,   0,  36,   3,   0,   0, 
     120,   1,   0,   0,  67,  58, 
      92,  85, 115, 101, 114, 115, 
-     92,  76,  67,  73,  95,  86, 
-     97, 110,  99, 111, 117, 118, 
-    101, 114,  45,  68,  87,  97, 
-    105, 110, 101,  92, 115, 111, 
-    117, 114,  99, 101,  92,  87, 
-    111, 114, 107, 115, 112,  97, 
-     99, 101, 115,  92,  68, 117, 
-     98,  69, 110, 103, 105, 110, 
-    101,  92,  69, 120, 116, 101, 
-    114, 110,  97, 108,  92,  68, 
-    105, 114, 101,  99, 116,  88, 
-     84,  75,  92, 115, 114,  99, 
-     92,  83, 104,  97, 100, 101, 
-    114, 115,  92,  67, 111, 109, 
-    109, 111, 110,  46, 102, 120, 
-    104,   0,  67,  58,  92,  85, 
-    115, 101, 114, 115,  92,  76, 
-     67,  73,  95,  86,  97, 110, 
-     99, 111, 117, 118, 101, 114, 
-     45,  68,  87,  97, 105, 110, 
-    101,  92, 115, 111, 117, 114, 
-     99, 101,  92,  87, 111, 114, 
-    107, 115, 112,  97,  99, 101, 
-    115,  92,  68, 117,  98,  69, 
-    110, 103, 105, 110, 101,  92, 
-     69, 120, 116, 101, 114, 110, 
-     97, 108,  92,  68, 105, 114, 
-    101,  99, 116,  88,  84,  75, 
-     92, 115, 114,  99,  92,  83, 
-    104,  97, 100, 101, 114, 115, 
-     92,  65, 108, 112, 104,  97, 
-     84, 101, 115, 116,  69, 102, 
-    102, 101,  99, 116,  46, 102, 
-    120,   0,  40,   0,   0,   0, 
-    140,   0,   0,   0,   0,   0, 
+     92,  76,  67,  86,  50,  48, 
+     52,  50,  56,  51,  53,  46, 
+     76,  67,  73,  69,  68,  85, 
+     67,  65,  84,  73,  79,  78, 
+     92,  68, 111,  99, 117, 109, 
+    101, 110, 116, 115,  92,  71, 
+    105, 116,  72, 117,  98,  92, 
+     69, 110, 103, 105, 110, 101, 
+     92,  69, 120, 116, 101, 114, 
+    110,  97, 108,  92,  68, 105, 
+    114, 101,  99, 116,  88,  84, 
+     75,  92, 115, 114,  99,  92, 
+     83, 104,  97, 100, 101, 114, 
+    115,  92,  67, 111, 109, 109, 
+    111, 110,  46, 102, 120, 104, 
+      0,  67,  58,  92,  85, 115, 
+    101, 114, 115,  92,  76,  67, 
+     86,  50,  48,  52,  50,  56, 
+     51,  53,  46,  76,  67,  73, 
+     69,  68,  85,  67,  65,  84, 
+     73,  79,  78,  92,  68, 111, 
+     99, 117, 109, 101, 110, 116, 
+    115,  92,  71, 105, 116,  72, 
+    117,  98,  92,  69, 110, 103, 
+    105, 110, 101,  92,  69, 120, 
+    116, 101, 114, 110,  97, 108, 
+     92,  68, 105, 114, 101,  99, 
+    116,  88,  84,  75,  92, 115, 
+    114,  99,  92,  83, 104,  97, 
+    100, 101, 114, 115,  92,  65, 
+    108, 112, 104,  97,  84, 101, 
+    115, 116,  69, 102, 102, 101, 
+     99, 116,  46, 102, 120,   0, 
+    171, 171,  40,   0,   0,   0, 
+    139,   0,   0,   0,   0,   0, 
     255, 255, 148,   3,   0,   0, 
       0,   0, 255, 255, 172,   3, 
       0,   0,   0,   0, 255, 255, 

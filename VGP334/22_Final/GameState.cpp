@@ -14,7 +14,7 @@ void GameState::Initialize()
 	mCamera.SetPosition({ 0.0f,4.0f,-10.0f });
 	mCamera.SetLookAt({ 0.0f,0.0f,0.0f });
 
-	mDirectionalLight.direction = Math::Normalize({ 1.0f, -1.0f,1.0f });
+	mDirectionalLight.direction = Math::Normalize({ 0.0f, -10.0f,0.0f });
 	mDirectionalLight.ambient = { 0.5f, 0.5f, 0.5f, 1.0f };
 	mDirectionalLight.diffuse = { 0.8f, 0.8f, 0.8f, 1.0f };
 	mDirectionalLight.specular = { 1.0f, 1.0f, 1.0f, 1.0f };
@@ -22,6 +22,7 @@ void GameState::Initialize()
 	mStandardEffect.Initialize(L"../../Assets/Shaders/Standard.fx");
 	mStandardEffect.SetCamera(mCamera);
 	mStandardEffect.SetDirectionalLight(mDirectionalLight);
+
 
 	mParticleEffect.Initialize();
 	mParticleEffect.SetCamera(mCamera);
@@ -43,8 +44,8 @@ void GameState::Initialize()
 	info.maxLifeTime = 1.0f;
 	info.minStartColor = Colors::Orange;
 	info.maxStartColor = Colors::Red;
-	info.minEndColor = Colors::OrangeRed;
-	info.maxEndColor = Colors::Yellow;
+	info.minEndColor = Colors::Purple;
+	info.maxEndColor = Colors::Blue;
 	info.minStartScale = Vector3::One;
 	info.maxStartScale = Vector3::One;
 	info.minEndScale = Vector3::One;
@@ -62,15 +63,33 @@ void GameState::Initialize()
 	mFlair2.Initialize(info);
 	mFlair2.SetCamera(mCamera);
 
-	Mesh ground = MeshBuilder::CreateGroundPlane(10, 10, 1.0f);
+	MeshPX sky = MeshBuilder::CreateSkySpherePX(5, 5, 100.0f);
+	mSky.meshBuffer.Initialize(sky);
+	mSky.diffuseMapId = TextureManager::Get()->LoadTexture("skysphere/sky.jpg");
+
+	Mesh ground = MeshBuilder::CreateGroundPlane(30, 30, 1.0f);
 	mGround.meshBuffer.Initialize(ground);
 	mGround.diffuseMapId = TextureManager::Get()->LoadTexture("Wood.jpg");
 
-	mCharacterId = ModelManager::Get()->LoadModel("../../Assets/Models/Character/MaleDancer/MaleDancer.model");
-	ModelManager::Get()->AddAnimation(mCharacterId, "../../Assets/Models/Character/MaleDancer/MaleBboy.model");
-	mCharacter = CreateRenderGroup(mCharacterId);
-	mCharacterAnimator.Initialize(mCharacterId);
-	mCharacterAnimator.PlayAnimation(1, true);
+	mMaleCharacterId = ModelManager::Get()->LoadModel("../../Assets/Models/Character/MaleDancer/MaleDancer.model");
+	ModelManager::Get()->AddAnimation(mMaleCharacterId, "../../Assets/Models/Character/MaleDancer/MaleBboy.model");
+	ModelManager::Get()->AddAnimation(mMaleCharacterId, "../../Assets/Models/Character/MaleDancer/MaleHip.model");
+	ModelManager::Get()->AddAnimation(mMaleCharacterId, "../../Assets/Models/Character/MaleDancer/MaleRobot.model");
+	ModelManager::Get()->AddAnimation(mMaleCharacterId, "../../Assets/Models/Character/MaleDancer/MaleSwing.model");
+	mMaleCharacter = CreateRenderGroup(mMaleCharacterId, &mMaleAnimator);
+	SetRenderGroundPosition(mMaleCharacter, { 3.0f, 0.0f,0.0f });
+	mMaleAnimator.Initialize(mMaleCharacterId);
+	mMaleAnimator.PlayAnimation(1, true);
+
+	mFemaleCharacterId = ModelManager::Get()->LoadModel("../../Assets/Models/Character/Michelle/Michelle.model");
+	ModelManager::Get()->AddAnimation(mFemaleCharacterId, "../../Assets/Models/Character/Michelle/MichelleShuffling.model");
+	ModelManager::Get()->AddAnimation(mFemaleCharacterId, "../../Assets/Models/Character/Michelle/MichelleUprock.model");
+	ModelManager::Get()->AddAnimation(mFemaleCharacterId, "../../Assets/Models/Character/Michelle/MichelleRumba.model");
+	ModelManager::Get()->AddAnimation(mFemaleCharacterId, "../../Assets/Models/Character/Michelle/MichelleFlair.model");
+	mFemaleCharacter = CreateRenderGroup(mFemaleCharacterId, &mFemaleAnimator);
+	SetRenderGroundPosition(mFemaleCharacter, { -3.0f, 0.0f,0.0f });
+	mFemaleAnimator.Initialize(mFemaleCharacterId);
+	mFemaleAnimator.PlayAnimation(1, true);
 
 	AnimationCallback changeCamera = [&]() {ChangeCameraPhase(); };
 
@@ -89,18 +108,20 @@ void GameState::Initialize()
 		.AddEventKey(changeCamera, 35.0f)
 		.AddPositionKey({ 0.0f,4.0f,-10.0f }, 35.1f )
 		.AddPositionKey({ 0.0f,4.0f,-10.0f }, 45.1f )
+		.AddEventKey(changeCamera, 42.0f)
 		.Build();
 
 	mAnimationTime = 0.0f;
 	mCameraPhase = 1;
 
-	SoundEffectManager::Get()->SetVolume(mSoundId, 0.1f);
+	SoundEffectManager::Get()->SetVolume(mSoundId, 0.5f);
 	SoundEffectManager::Get()->Play(mSoundId);
 }
 
 void GameState::Terminate()
 {
-	CleanupRenderGroup(mCharacter);
+	CleanupRenderGroup(mFemaleCharacter);
+	CleanupRenderGroup(mMaleCharacter);
 	mGround.Terminate();
 	mFlair2.Terminate();
 	mFlair1.Terminate();
@@ -111,7 +132,7 @@ void GameState::Terminate()
 void GameState::Update(const float deltaTime)
 {
 	mTime += deltaTime;
-	if (mTime > 50.0f)
+	if (mTime > ANIMATION_MAX_TIME)
 	{
 		mTime = 0.0f;
 	}
@@ -119,7 +140,8 @@ void GameState::Update(const float deltaTime)
 	mFlair1.Update(deltaTime);
 
 	UpdateCameraControl(deltaTime);
-	mCharacterAnimator.Update(deltaTime);
+	mMaleAnimator.Update(deltaTime);
+	mFemaleAnimator.Update(deltaTime);
 
 	float prevTime = mAnimationTime;
 	mAnimationTime += deltaTime;
@@ -152,7 +174,7 @@ void GameState::Update(const float deltaTime)
 	default:
 		break;
 	}
-	
+
 }
 
 void GameState::Render()
@@ -162,15 +184,21 @@ void GameState::Render()
 	mStandardEffect.Begin();
 	if (mDrawSkeleton)
 	{
-		AnimationUtil::BoneTransforms boneTransforms;
-		AnimationUtil::ComputeBoneTransforms(mCharacterId, boneTransforms, &mCharacterAnimator);
-		AnimationUtil::DrawSkeleton(mCharacterId, boneTransforms);
+		AnimationUtil::BoneTransforms maleBoneTransforms;
+		AnimationUtil::ComputeBoneTransforms(mMaleCharacterId, maleBoneTransforms, &mMaleAnimator);
+		AnimationUtil::DrawSkeleton(mMaleCharacterId, maleBoneTransforms);
+
+		AnimationUtil::BoneTransforms femaleBoneTransform;;
+		AnimationUtil::ComputeBoneTransforms(mFemaleCharacterId, femaleBoneTransform, &mFemaleAnimator);
+		AnimationUtil::DrawSkeleton(mFemaleCharacterId, femaleBoneTransform);
 	}
 	else
 	{
-		DrawRenderGroup(mStandardEffect, mCharacter);
+		DrawRenderGroup(mStandardEffect, mMaleCharacter);
+		DrawRenderGroup(mStandardEffect, mFemaleCharacter);
 	}
 		mStandardEffect.Render(mGround);
+		mStandardEffect.Render(mSky);
 	mStandardEffect.End();
 
 	mParticleEffect.Begin();
@@ -251,6 +279,8 @@ void GameState::ChangeCameraPhase()
 	{
 		mCameraPhase = 1;
 	}
+	mMaleAnimator.PlayAnimation(mCameraPhase, true);
+	mFemaleAnimator.PlayAnimation(mCameraPhase, true);
 }
 
 
