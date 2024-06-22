@@ -39,11 +39,6 @@ void AnimationUtil::ComputeBoneTransforms(ModelId id, BoneTransforms& boneTransf
 	{
 		boneTransforms.resize(model->skeleton->bones.size(), Math::Matrix4::Identity);
 		ComputeBoneTransformRecursive(model->skeleton->root, boneTransforms, animator);
-
-		for (auto& m : boneTransforms)
-		{
-			m._42 += 0.5f;
-		}
 	}
 }
 

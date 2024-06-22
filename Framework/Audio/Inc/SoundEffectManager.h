@@ -27,6 +27,8 @@ namespace SpringEngine::Audio
 		void Play(SoundId id, bool loop = false);
 		void Stop(SoundId id);
 
+		void SetVolume(SoundId id, float v);
+
 	private:
 		struct Entry
 		{

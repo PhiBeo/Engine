@@ -49,10 +49,10 @@ void GameState::Render()
 
 	mStandardEffect.Begin();
 
-	AnimationUtil::BoneTransforms boneTransforms;
-	AnimationUtil::ComputeBoneTransforms(mCharacterId, boneTransforms, &mCharacterAnimator);
 	if (mDrawSkeleton)
 	{
+		AnimationUtil::BoneTransforms boneTransforms;
+		AnimationUtil::ComputeBoneTransforms(mCharacterId, boneTransforms, &mCharacterAnimator);
 		AnimationUtil::DrawSkeleton(mCharacterId, boneTransforms);
 	}
 	else

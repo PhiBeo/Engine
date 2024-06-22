@@ -268,12 +268,12 @@ int main(int argc, char* argv[])
 	Model model;
 	BoneIndexLookup boneIndexMap;
 
+	printf("Build Skeleton...\n");
+	model.skeleton = std::make_unique<Skeleton>();
+	BuildSkeleton(*scene->mRootNode, nullptr, *model.skeleton, boneIndexMap);
+
 	if (arguments.animOnly)
 	{
-		printf("Build Skeleton...\n");
-		model.skeleton = std::make_unique<Skeleton>();
-		BuildSkeleton(*scene->mRootNode, nullptr, *model.skeleton, boneIndexMap);
-
 		printf("Scaling positions...\n");
 		for (auto& bone : model.skeleton->bones)
 		{

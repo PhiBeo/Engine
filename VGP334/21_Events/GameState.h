@@ -26,6 +26,6 @@ private:
 	SpringEngine::Graphics::RenderObject mGround;
 
 	SpringEngine::Math::Vector3 mOffset = SpringEngine::Math::Vector3::Zero;
-	SpringEngine::Graphics::Animation mAnimation;
+	SpringEngine::Graphics::Animation mCameraAnimation;
 	float mAnimationTime = 0.0f;
 };

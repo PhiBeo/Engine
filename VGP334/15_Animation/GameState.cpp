@@ -27,7 +27,7 @@ void GameState::Initialize()
 	mGround.meshBuffer.Initialize(ground);
 	mGround.diffuseMapId = TextureManager::Get()->LoadTexture("misc/concrete.jpg");
 
-	mAnimation = AnimationBuilder()
+	mCameraAnimation = AnimationBuilder()
 		.AddPositionKey({ 0.0f, 5.0f, 0.0f }, 0.0f, EaseType::EaseInOutQuad)
 		.AddPositionKey({ 0.0f, 0.5f, 0.0f }, 1.0f, EaseType::EaseInQuad)
 		.AddPositionKey({ 0.0f, 5.0f, 0.0f }, 2.0f, EaseType::EaseOutQuad)
@@ -55,9 +55,9 @@ void GameState::Update(const float deltaTime)
 	UpdateCameraControl(deltaTime);
 
 	mAnimationTime += deltaTime;
-	while (mAnimationTime > mAnimation.GetDuration())
+	while (mAnimationTime > mCameraAnimation.GetDuration())
 	{
-		mAnimationTime -= mAnimation.GetDuration();
+		mAnimationTime -= mCameraAnimation.GetDuration();
 	}
 }
 
@@ -66,7 +66,7 @@ void GameState::Render()
 	SimpleDraw::AddGroundPlane(10.f, Colors::White);
 	SimpleDraw::Render(mCamera);
 
-	mBall.transform = mAnimation.GetTransform(mAnimationTime);
+	mBall.transform = mCameraAnimation.GetTransform(mAnimationTime);
 	mStandardEffect.Begin();
 	mStandardEffect.Render(mBall);
 	mStandardEffect.Render(mGround);

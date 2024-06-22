@@ -94,3 +94,12 @@ void SoundEffectManager::Stop(SoundId id)
 		iter->second->instance->Stop();
 	}
 }
+
+void SoundEffectManager::SetVolume(SoundId id, float v)
+{
+	auto iter = mInventory.find(id);
+	if (iter != mInventory.end())
+	{
+		iter->second->instance->SetVolume(v);
+	}
+}
