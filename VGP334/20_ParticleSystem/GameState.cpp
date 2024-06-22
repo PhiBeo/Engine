@@ -19,44 +19,49 @@ void GameState::Initialize()
 	mParticleEffect.SetCamera(mCamera);
 	ParticleSystemInfo info;
 
-	info.spawnPosition = Math::Vector3::Zero;
+	info.spawnPosition = {0.0f, 0.0f, 10.0f};
 	info.spawnDirection = Math::Vector3::YAxis;
 	info.spawnDelay = 0.0f;
 	info.systemLifeTime = 99999.0f;
-	info.minParticlePerEmit = 3;
-	info.maxParticlePerEmit = 5;
-	info.minTimeBetweenEmit = 0.1f;
-	info.maxTimeBetweenEmit = 0.3f;
-	info.minSpawnAngle = -30.0f * 3.141592 / 180.0f;
-	info.maxSpawnAngle = 30.0f * 3.141592 / 180.0f;
-	info.minSpeed = 5.0f;
-	info.maxSpeed = 10.0f;
-	info.minLifeTime = 0.3f;
-	info.maxLifeTime = 1.0f;
+	info.minParticlePerEmit = 1;
+	info.maxParticlePerEmit = 3;
+	info.minTimeBetweenEmit = 0.5f;
+	info.maxTimeBetweenEmit = 2.0f;
+	info.minSpawnAngle = -10.0f * 3.141592 / 180.0f;
+	info.maxSpawnAngle = 10.0f * 3.141592 / 180.0f;
+	info.minSpeed = 10.0f;
+	info.maxSpeed = 15.0f;
+	info.minLifeTime = 3.0f;
+	info.maxLifeTime = 5.0f;
 	info.minStartColor = Colors::White;
 	info.maxStartColor = Colors::White;
-	info.minEndColor = Colors::White;
-	info.maxEndColor = Colors::White;
+	info.minEndColor = Colors::Cyan;
+	info.maxEndColor = Colors::Purple;
 	info.minStartScale = Math::Vector3::One;
 	info.maxStartScale = Math::Vector3::One;
 	info.minEndScale = Math::Vector3::Zero;
 	info.maxEndScale = Math::Vector3::Zero;
-	info.maxParticle = 100;
-	info.particleTextureId = TextureManager::Get()->LoadTexture("Images/mushroom.png");
+	info.maxParticle = 50;
+	info.particleTextureId = TextureManager::Get()->LoadTexture("Images/bullet1.png");
 	
-	mParticleSystem.Initialize(info);
-	mParticleSystem.SetCamera(mCamera);
+	//mParticleSystem.Initialize(info);
+	//mParticleSystem.SetCamera(mCamera);
+
+	mFirework.Initialize(info);
+	mFirework.SetCamera(mCamera);
 }
 
 void GameState::Terminate()
 {
-	mParticleSystem.Terminate();
+	mFirework.Terminate();
+	//mParticleSystem.Terminate();
 	mParticleEffect.Terminate();
 }
 
 void GameState::Update(const float deltaTime)
 {
-	mParticleSystem.Update(deltaTime);
+	//mParticleSystem.Update(deltaTime);
+	mFirework.Update(deltaTime);
 	UpdateCameraControl(deltaTime);
 }
 
@@ -66,7 +71,8 @@ void GameState::Render()
 	SimpleDraw::Render(mCamera);
 
 	mParticleEffect.Begin();
-		mParticleSystem.Render(mParticleEffect);
+		mFirework.Render(mParticleEffect);
+		//mParticleSystem.Render(mParticleEffect);
 	mParticleEffect.End();
 }
 
@@ -86,7 +92,7 @@ void GameState::DebugUI()
 		ImGui::ColorEdit4("Specular##Light", &mDirectionalLight.specular.r);
 	}
 
-	mParticleSystem.DebugUI();
+	//mParticleSystem.DebugUI();
 	Physics::PhysicsWorld::Get()->DebugUI();
 
 	ImGui::End();

@@ -25,17 +25,17 @@ namespace SpringEngine
 	public:
 		Particle() = default;
 		
-		void Initialize();
-		void Terminate();
+		virtual void Initialize();
+		virtual void Terminate();
 
-		void Activate(const ParticleActivateData& data);
-		void Update(float deltaTime);
+		virtual void Activate(const ParticleActivateData& data);
+		virtual void Update(float deltaTime);
 
 		bool IsActive() const;
 		void GetCurrentInfo(ParticleInfo& info) const;
 		const Graphics::Transform& GetTransform() const;
 
-	private:
+	protected:
 		Graphics::Transform mTransform;
 		Physics::RigidBody mRigidBody;
 		Physics::CollisionShape mCollisionShape;

@@ -6,6 +6,7 @@
 
 #include "Particle.h"
 #include "ParticleSystem.h"
+#include "FireworkParticleSystem.h"
 
 namespace SpringEngine
 {

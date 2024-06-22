@@ -1,5 +1,8 @@
-﻿  ParticleSystem.cpp
-C:\Users\Yarts\Documents\Engine\Engine\SpringEngine\Src\ParticleSystem.cpp(16,25): warning C4018: '<': signed/unsigned mismatch
-  (compiling source file '/Src/ParticleSystem.cpp')
+﻿  FireworkParticleSystem.cpp
+C:\Users\Yarts\Documents\Engine\Engine\SpringEngine\Src\FireworkParticleSystem.cpp(20,42): warning C4305: '=': truncation from 'double' to 'float'
+  (compiling source file '/Src/FireworkParticleSystem.cpp')
+  
+C:\Users\Yarts\Documents\Engine\Engine\SpringEngine\Src\FireworkParticleSystem.cpp(21,41): warning C4305: '=': truncation from 'double' to 'float'
+  (compiling source file '/Src/FireworkParticleSystem.cpp')
   
   SpringEngine.vcxproj -> C:\Users\Yarts\Documents\Engine\x64\Debug\SpringEngine.lib
