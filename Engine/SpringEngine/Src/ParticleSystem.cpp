@@ -11,26 +11,35 @@ void ParticleSystem::Initialize(const ParticleSystemInfo& info)
 	mNextAvailableParticleIndex = 0;
 	mNextSpawnTime = info.spawnDelay;
 	mLifeTime = info.systemLifeTime;
-	mParticleIndexes.resize(info.maxParticle);
-	mParticles.resize(info.maxParticle);
-	for (uint32_t i = 0; i < info.maxParticle; ++i)
-	{
-		mParticleIndexes[i] = i;
-		mParticles[i].Initialize();
-	}
 
 	Mesh particleMesh = MeshBuilder::CreateSpriteQuad(0.5f, 0.5f);
 	mRenderObject.meshBuffer.Initialize(particleMesh);
 	mRenderObject.diffuseMapId = info.particleTextureId;
+
+	InitializeParticles(info.maxParticle);
+}
+
+void SpringEngine::ParticleSystem::InitializeParticles(uint32_t count)
+{
+	mParticleIndexes.resize(count);
+	mParticles.resize(count);
+	for (uint32_t i = 0; i < count; ++i)
+	{
+		mParticleIndexes[i] = i;
+		mParticles[i] = std::make_unique<Particle>();
+		mParticles[i]->Initialize();
+	}
 }
 
 void ParticleSystem::Terminate()
 {
 	mRenderObject.Terminate();
-	for (Particle& p : mParticles)
+	for (auto& p : mParticles)
 	{
-		p.Terminate();
+		p->Terminate();
+		p.reset();
 	}
+	mParticles.clear();
 }
 
 void ParticleSystem::Update(float deltaTime)
@@ -43,18 +52,49 @@ void ParticleSystem::Update(float deltaTime)
 		{
 			SpawnParticles();
 		}
-		for (Particle& p : mParticles)
-		{
-			p.Update(deltaTime);
-		}
-
+	}
+	bool hasUpdate = false;
+	for (auto& p : mParticles)
+	{
+		p->Update(deltaTime);
+		hasUpdate = hasUpdate || p->IsActive();
+	}
+	if (hasUpdate)
+	{
 		std::sort(mParticleIndexes.begin(), mParticleIndexes.end(), [&](const int& a, const int& b)
 			{
-				float distSqA = Math::MagnitudeSqr(mParticles[a].GetTransform().position - mCamera->GetPosition());
-				float distSqB = Math::MagnitudeSqr(mParticles[b].GetTransform().position - mCamera->GetPosition());
+				float distSqA = Math::MagnitudeSqr(mParticles[a]->GetTransform().position - mCamera->GetPosition());
+				float distSqB = Math::MagnitudeSqr(mParticles[b]->GetTransform().position - mCamera->GetPosition());
 				return distSqB < distSqA;
 			});
 	}
+}
+
+void ParticleSystem::Play(float lifeTime)
+{
+	mLifeTime = lifeTime;
+}
+
+void ParticleSystem::SetPosition(const Math::Vector3& position)
+{
+	mInfo.spawnPosition = position;
+}
+
+bool ParticleSystem::IsActive() const
+{
+	if (mLifeTime > 0.0f)
+	{
+		return true;
+	}
+	for (const auto& p : mParticles)
+	{
+		if (p->IsActive())
+		{
+			return true;
+		}
+	}
+
+	return false;
 }
 
 void ParticleSystem::DebugUI()
@@ -88,7 +128,7 @@ void ParticleSystem::DebugUI()
 	}
 }
 
-void SpringEngine::ParticleSystem::SetCamera(Graphics::Camera& camera)
+void ParticleSystem::SetCamera(const Graphics::Camera& camera)
 {
 	mCamera = &camera;
 }
@@ -109,7 +149,7 @@ void ParticleSystem::SpawnParticles()
 
 void ParticleSystem::SpawnParticle()
 {
-	Particle& p = mParticles[mNextAvailableParticleIndex];
+	auto& p = mParticles[mNextAvailableParticleIndex];
 	mNextAvailableParticleIndex = (mNextAvailableParticleIndex + 1) % mParticles.size();
 
 	Vector3 spawnDirection = mInfo.spawnDirection;
@@ -157,5 +197,5 @@ void ParticleSystem::SpawnParticle()
 	t = static_cast<float>(rand()) / static_cast<float>(RAND_MAX);
 	data.scaleEnd = Lerp(mInfo.minEndScale, mInfo.maxEndScale, t);
 
-	p.Activate(data);
+	p->Activate(data);
 }

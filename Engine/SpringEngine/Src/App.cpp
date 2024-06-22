@@ -1,6 +1,7 @@
 #include "Precompiled.h"
 #include "App.h"
 #include "AppState.h"
+#include "EventManager.h"
 
 using namespace SpringEngine;
 using namespace SpringEngine::Core;
@@ -37,6 +38,7 @@ void App::Run(const AppConfig& config)
 	TextureManager::StaticInitialize("../../Assets/Textures");
 	ModelManager::StatticInitialize();
 	PhysicsWorld::StaticInitialize(physicsSettings);
+	EventManager::StaticInitialize();
 
 	ASSERT(mCurrentState, "App -- no app state found");
 	mCurrentState->Initialize();
@@ -79,6 +81,7 @@ void App::Run(const AppConfig& config)
 
 	mCurrentState->Terminate();
 
+	EventManager::StaticTerminate();
 	PhysicsWorld::StaticTerminate();
 	ModelManager::StaticTerminate();
 	TextureManager::StaticTerminate();

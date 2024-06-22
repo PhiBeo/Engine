@@ -7,6 +7,9 @@
 #include "Particle.h"
 #include "ParticleSystem.h"
 
+#include "Event.h"
+#include "EventManager.h"
+
 namespace SpringEngine
 {
 	App& MainApp();

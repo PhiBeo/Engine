@@ -54,6 +54,17 @@ float Animation::GetDuration() const
 	return mDuration;
 }
 
+void Animation::PlayEvents(float prevTime, float currentTime)
+{
+	for (uint32_t i = 0; i < mEventKeys.size(); ++i)
+	{
+		if (mEventKeys[i].time > prevTime && mEventKeys[i].time <= currentTime)
+		{
+			mEventKeys[i].key();
+		}
+	}
+}
+
 Math::Vector3 Animation::GetPosition(float time) const
 {
 	for (uint32_t i = 0; i < mPositionsKeys.size(); ++i)

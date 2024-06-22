@@ -28,10 +28,13 @@ namespace SpringEngine::Graphics
 		EaseType easeType = EaseType::Linear;
 	};
 
+	using AnimationCallback = std::function<void()>;
+
 	template<class T>
 	using Keyframes = std::vector<Keyframe<T>>;
 
 	using PositionKeys = Keyframes<Math::Vector3>;
 	using RotationKeys = Keyframes<Math::Quaternion>;
 	using ScaleKeys = Keyframes<Math::Vector3>;
+	using EventKeys = Keyframes<AnimationCallback>;
 }
