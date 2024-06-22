@@ -99,6 +99,7 @@ void SpringEngine::Graphics::StandardEffect::Render(const RenderObject& renderOb
 		AnimationUtil::BoneTransforms boneTransforms;
 		AnimationUtil::ComputeBoneTransforms(renderObject.modelId, boneTransforms, renderObject.animator);
 		AnimationUtil::ApplyBoneOffset(renderObject.modelId, boneTransforms);
+
 		for (Math::Matrix4& m : boneTransforms)
 		{
 			m = Transpose(m);

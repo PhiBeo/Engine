@@ -44,7 +44,7 @@ void AnimationIO::Read(FILE* file, Animation& animation)
 	}
 
 	fscanf_s(file, "RotationKeyCount: %d\n", &count);
-	for (auto& k : animation.mRotationKeys)
+	for (uint32_t k = 0; k < count; ++k)
 	{
 		Math::Quaternion rot;
 		fscanf_s(file, "%f %f %f %f %f\n", &time, &rot.x, &rot.y, &rot.z, &rot.w);
@@ -52,7 +52,7 @@ void AnimationIO::Read(FILE* file, Animation& animation)
 	}
 
 	fscanf_s(file, "ScaleKeyCount: %d\n", &count);
-	for (auto& k : animation.mScaleKeys)
+	for (uint32_t k = 0; k < count; ++k)
 	{
 		Math::Vector3 scale;
 		fscanf_s(file, "%f %f %f %f\n", &time, &scale.x, &scale.y, &scale.z);
