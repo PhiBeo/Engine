@@ -97,6 +97,23 @@ bool ParticleSystem::IsActive() const
 	return false;
 }
 
+bool SpringEngine::ParticleSystem::IsActive()
+{
+	if (mLifeTime > 0.0f)
+	{
+		return true;
+	}
+	for (const auto& p : mParticles)
+	{
+		if (p->IsActive())
+		{
+			return true;
+		}
+	}
+
+	return false;
+}
+
 void ParticleSystem::DebugUI()
 {
 	if (ImGui::CollapsingHeader("ParticleSystem", ImGuiTreeNodeFlags_DefaultOpen))

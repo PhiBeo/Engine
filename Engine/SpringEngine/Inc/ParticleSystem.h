@@ -46,7 +46,8 @@ namespace SpringEngine
 		void SetPosition(const Math::Vector3& position);
 		bool IsActive() const;
 
-		void DebugUI();
+		bool IsActive();
+		virtual void DebugUI();
 
 		virtual void SetCamera(const Graphics::Camera& camera);
 

@@ -8,6 +8,7 @@ using namespace SpringEngine::Core;
 using namespace SpringEngine::Graphics;
 using namespace SpringEngine::Input;
 using namespace SpringEngine::Physics;
+using namespace SpringEngine::Audio;
 
 void App::ChangeState(const std::string& stateName)
 {
@@ -39,6 +40,8 @@ void App::Run(const AppConfig& config)
 	ModelManager::StatticInitialize();
 	PhysicsWorld::StaticInitialize(physicsSettings);
 	EventManager::StaticInitialize();
+	AudioSystem::StaticInitialize();
+	SoundEffectManager::StaticInitialize("../../Assets/Sounds");
 
 	ASSERT(mCurrentState, "App -- no app state found");
 	mCurrentState->Initialize();
@@ -63,6 +66,7 @@ void App::Run(const AppConfig& config)
 			mCurrentState->Initialize();
 		}
 
+		AudioSystem::Get()->Update();
 		auto deltaTime = TimeUtil::GetDeltaTime();
 		if (deltaTime < 0.5f)
 		{
@@ -81,6 +85,8 @@ void App::Run(const AppConfig& config)
 
 	mCurrentState->Terminate();
 
+	SoundEffectManager::StaticTerminate();
+	AudioSystem::StaticTerminate();
 	EventManager::StaticTerminate();
 	PhysicsWorld::StaticTerminate();
 	ModelManager::StaticTerminate();

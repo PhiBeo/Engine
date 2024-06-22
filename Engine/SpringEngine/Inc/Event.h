@@ -6,7 +6,8 @@ namespace SpringEngine
 	{
 		None,
 		AnimEvent,
-		SpacePressed
+		SpacePressed,
+		FireworkExplode
 	};
 
 	class Event
@@ -37,5 +38,15 @@ namespace SpringEngine
 	public:
 		SpacePressedEvent() : Event(EventType::SpacePressed) {}
 		~SpacePressedEvent() = default;
+	};
+
+	class FireworkExplodeEvent : public Event
+	{
+	public:
+		FireworkExplodeEvent() : Event(EventType::FireworkExplode) {}
+		~FireworkExplodeEvent() = default;
+
+		uint32_t fireworkId = 0;
+		Math::Vector3 position;
 	};
 }

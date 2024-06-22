@@ -146,6 +146,7 @@
     <ClInclude Include="Inc\Common.h" />
     <ClInclude Include="Inc\Event.h" />
     <ClInclude Include="Inc\EventManager.h" />
+    <ClInclude Include="Inc\FireworkParticleSystem.h" />
     <ClInclude Include="Inc\Particle.h" />
     <ClInclude Include="Inc\ParticleSystem.h" />
     <ClInclude Include="Inc\SpringEngine.h" />
@@ -154,6 +155,7 @@
   <ItemGroup>
     <ClCompile Include="Src\App.cpp" />
     <ClCompile Include="Src\EventManager.cpp" />
+    <ClCompile Include="Src\FireworkParticleSystem.cpp" />
     <ClCompile Include="Src\Particle.cpp" />
     <ClCompile Include="Src\ParticleSystem.cpp" />
     <ClCompile Include="Src\Precompiled.cpp">
@@ -162,6 +164,9 @@
     <ClCompile Include="Src\SpringEngine.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Framework\Audio\Audio.vcxproj">
+      <Project>{0d4d96ff-e6ad-48a6-b83d-decad5722fe1}</Project>
+    </ProjectReference>
     <ProjectReference Include="..\..\Framework\Core\Core.vcxproj">
       <Project>{8f4b88b4-5e01-41ec-b493-c849695e3bea}</Project>
     </ProjectReference>

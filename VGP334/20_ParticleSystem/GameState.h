@@ -20,4 +20,6 @@ private:
 
 	SpringEngine::Graphics::ParticleEffect mParticleEffect;
 	SpringEngine::ParticleSystem mParticleSystem;
+
+	SpringEngine::Audio::SoundId mSoundId;
 };

@@ -1,5 +1,47 @@
-﻿  App.cpp
+﻿  Precompiled.cpp
+C:\Users\Yarts\Documents\Engine\Framework\Graphics\Inc\BillBoardEffect.h(5,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file 'Src/Precompiled.cpp')
+  
+C:\Users\Yarts\Documents\Engine\External\Bullet\BulletSoftBody\btSoftBody.h(38,50): warning C4305: 'initializing': truncation from 'double' to 'btScalar'
+  (compiling source file 'Src/Precompiled.cpp')
+  
+C:\Users\Yarts\Documents\Engine\External\Bullet\BulletSoftBody\btSoftBody.h(1232,17): warning C4244: 'initializing': conversion from 'double' to 'btScalar', possible loss of data
+  (compiling source file 'Src/Precompiled.cpp')
+  
+C:\Users\Yarts\Documents\Engine\External\Bullet\BulletSoftBody\btSoftBody.h(1357,21): warning C4244: '+=': conversion from 'double' to 'btScalar', possible loss of data
+  (compiling source file 'Src/Precompiled.cpp')
+  
+C:\Users\Yarts\Documents\Engine\External\Bullet\BulletSoftBody\btSoftBody.h(1361,21): warning C4244: 'initializing': conversion from 'double' to 'btScalar', possible loss of data
+  (compiling source file 'Src/Precompiled.cpp')
+  
+C:\Users\Yarts\Documents\Engine\External\Bullet\BulletSoftBody\btSoftBody.h(1385,20): warning C4244: '=': conversion from 'double' to 'btScalar', possible loss of data
+  (compiling source file 'Src/Precompiled.cpp')
+  
+C:\Users\Yarts\Documents\Engine\External\Bullet\BulletSoftBody\btSoftBody.h(1387,23): warning C4244: '=': conversion from 'double' to 'btScalar', possible loss of data
+  (compiling source file 'Src/Precompiled.cpp')
+  
+C:\Users\Yarts\Documents\Engine\External\Bullet\BulletSoftBody\btSoftBody.h(1269,17): warning C4244: 'initializing': conversion from 'double' to 'btScalar', possible loss of data
+  (compiling source file 'Src/Precompiled.cpp')
+  C:\Users\Yarts\Documents\Engine\External\Bullet\BulletSoftBody\btSoftBody.h(1269,17):
+  the template instantiation context (the oldest one first) is
+  	C:\Users\Yarts\Documents\Engine\External\Bullet\BulletSoftBody\btSoftBody.h(1303,4):
+  	see reference to function template instantiation 'void btSoftBody::updateFace<btDbvtNode>(DBVTNODE *,bool,bool)' being compiled
+          with
+          [
+              DBVTNODE=btDbvtNode
+          ]
+  
+  App.cpp
   EventManager.cpp
+  FireworkParticleSystem.cpp
+C:\Users\Yarts\Documents\Engine\Engine\SpringEngine\Src\FireworkParticleSystem.cpp(85,42): warning C4305: '=': truncation from 'double' to 'float'
+  (compiling source file '/Src/FireworkParticleSystem.cpp')
+  
+C:\Users\Yarts\Documents\Engine\Engine\SpringEngine\Src\FireworkParticleSystem.cpp(86,41): warning C4305: '=': truncation from 'double' to 'float'
+  (compiling source file '/Src/FireworkParticleSystem.cpp')
+  
+  Particle.cpp
+  ParticleSystem.cpp
   SpringEngine.cpp
   Generating Code...
   SpringEngine.vcxproj -> C:\Users\Yarts\Documents\Engine\x64\Debug\SpringEngine.lib

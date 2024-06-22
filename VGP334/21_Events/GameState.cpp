@@ -50,7 +50,7 @@ void GameState::Initialize()
 
 void GameState::Terminate()
 {
-	EventManager::Get()->RemoveListiner(EventType::SpacePressed, std::bind(&GameState::OnSpacePressEvent, this, std::placeholders::_1));
+	//EventManager::Get()->RemoveListiner(EventType::SpacePressed, std::bind(&GameState::OnSpacePressEvent, this, std::placeholders::_1));
 	mGround.Terminate();
 	mBall.Terminate();
 	mStandardEffect.Terminate();

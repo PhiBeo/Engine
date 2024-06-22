@@ -4,6 +4,7 @@ using namespace SpringEngine;
 using namespace SpringEngine::Graphics;
 using namespace SpringEngine::Math;
 using namespace SpringEngine::Input;
+using namespace SpringEngine::Audio;
 
 void GameState::Initialize()
 {
@@ -46,6 +47,8 @@ void GameState::Initialize()
 	
 	mParticleSystem.Initialize(info);
 	mParticleSystem.SetCamera(mCamera);
+
+	mSoundId = SoundEffectManager::Get()->Load("megamanx_blast.wav");
 }
 
 void GameState::Terminate()
@@ -58,6 +61,13 @@ void GameState::Update(const float deltaTime)
 {
 	mParticleSystem.Update(deltaTime);
 	UpdateCameraControl(deltaTime);
+
+
+	auto input = Input::InputSystem::Get();
+	if (input->IsKeyPressed(KeyCode::C))
+	{
+		SoundEffectManager::Get()->Play(mSoundId);
+	}
 }
 
 void GameState::Render()
