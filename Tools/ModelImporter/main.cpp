@@ -17,6 +17,7 @@ struct Arguments
 	std::filesystem::path inputFileName;
 	std::filesystem::path outputFileName;
 	float scale = 1.0f;
+	bool animOnly = false;
 };
 
 std::optional<Arguments> ParseArgs(int argc, char* argv[])
@@ -35,6 +36,10 @@ std::optional<Arguments> ParseArgs(int argc, char* argv[])
 		{
 			arguments.scale = atof(argv[i + 1]);
 			++i;
+		}
+		if (strcmp(argv[i], "-animOnly") == 0)
+		{
+			arguments.animOnly = atoi(argv[i + 1]) == 1;
 		}
 	}
 
@@ -263,12 +268,25 @@ int main(int argc, char* argv[])
 	Model model;
 	BoneIndexLookup boneIndexMap;
 
-	if (scene->HasMeshes())
+	if (arguments.animOnly)
 	{
 		printf("Build Skeleton...\n");
 		model.skeleton = std::make_unique<Skeleton>();
 		BuildSkeleton(*scene->mRootNode, nullptr, *model.skeleton, boneIndexMap);
 
+		printf("Scaling positions...\n");
+		for (auto& bone : model.skeleton->bones)
+		{
+			bone->offsetTransform._41 *= arguments.scale;
+			bone->offsetTransform._42 *= arguments.scale;
+			bone->offsetTransform._43 *= arguments.scale;
+			bone->toParentTransform._41 *= arguments.scale;
+			bone->toParentTransform._42 *= arguments.scale;
+			bone->toParentTransform._43 *= arguments.scale;
+		}
+	}
+	else if (scene->HasMeshes())
+	{
 		printf("Reading Mesh Data...\n");
 
 		for (uint32_t meshIndex = 0; meshIndex < scene->mNumMeshes; ++meshIndex)
@@ -342,21 +360,22 @@ int main(int argc, char* argv[])
 					}
 				}
 			}
-		}
 
-		printf("Scaling positions...\n");
-		for (auto& bone : model.skeleton->bones)
-		{
-			bone->offsetTransform._41 *= arguments.scale;
-			bone->offsetTransform._42 *= arguments.scale;
-			bone->offsetTransform._43 *= arguments.scale;
-			bone->toParentTransform._41 *= arguments.scale;
-			bone->toParentTransform._42 *= arguments.scale;
-			bone->toParentTransform._43 *= arguments.scale;
+			printf("Scaling positions...\n");
+			for (auto& bone : model.skeleton->bones)
+			{
+				bone->offsetTransform._41 *= arguments.scale;
+				bone->offsetTransform._42 *= arguments.scale;
+				bone->offsetTransform._43 *= arguments.scale;
+				bone->toParentTransform._41 *= arguments.scale;
+				bone->toParentTransform._42 *= arguments.scale;
+				bone->toParentTransform._43 *= arguments.scale;
+			}
+
 		}
 	}
 
-	if (scene->HasMaterials())
+	if (scene->HasMaterials() && !arguments.animOnly)
 	{
 		printf("Reading Material Data...\n");
 
@@ -439,24 +458,26 @@ int main(int argc, char* argv[])
 		}
 	}
 
-	printf("Saving Model...\n");
-	if (!ModelIO::SaveModel(arguments.outputFileName, model))
+	if (!arguments.animOnly)
 	{
-		printf("Failed to save model data...\n");
-	}
+		printf("Saving Model...\n");
+		if (!ModelIO::SaveModel(arguments.outputFileName, model))
+		{
+			printf("Failed to save model data...\n");
+		}
 
-	printf("Saving Material...\n");
-	if (!ModelIO::SaveMaterial(arguments.outputFileName, model))
-	{
-		printf("Failed to save material data...\n");
-	}
+		printf("Saving Material...\n");
+		if (!ModelIO::SaveMaterial(arguments.outputFileName, model))
+		{
+			printf("Failed to save material data...\n");
+		}
 
-	printf("Saving Skeleton...\n");
-	if (!ModelIO::SaveSkeleton(arguments.outputFileName, model))
-	{
-		printf("Failed to save skeleton data...\n");
+		printf("Saving Skeleton...\n");
+		if (!ModelIO::SaveSkeleton(arguments.outputFileName, model))
+		{
+			printf("Failed to save skeleton data...\n");
+		}
 	}
-
 	printf("Saving Animations...\n");
 	if (!ModelIO::SaveAnimations(arguments.outputFileName, model))
 	{

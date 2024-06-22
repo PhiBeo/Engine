@@ -144,11 +144,15 @@
     <ClInclude Include="Inc\App.h" />
     <ClInclude Include="Inc\AppState.h" />
     <ClInclude Include="Inc\Common.h" />
+    <ClInclude Include="Inc\Particle.h" />
+    <ClInclude Include="Inc\ParticleSystem.h" />
     <ClInclude Include="Inc\SpringEngine.h" />
     <ClInclude Include="Src\Precompiled.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Src\App.cpp" />
+    <ClCompile Include="Src\Particle.cpp" />
+    <ClCompile Include="Src\ParticleSystem.cpp" />
     <ClCompile Include="Src\Precompiled.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
     </ClCompile>
@@ -166,6 +170,9 @@
     </ProjectReference>
     <ProjectReference Include="..\..\Framework\Math\Math.vcxproj">
       <Project>{0662aaf0-58e9-4080-a9e6-3569922148bb}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Framework\Physics\Physics.vcxproj">
+      <Project>{22d73c44-2324-4b5e-8029-f974a979f09e}</Project>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

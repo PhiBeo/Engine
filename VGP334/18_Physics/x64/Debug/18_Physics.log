@@ -1,0 +1,5 @@
+﻿  GameState.cpp
+C:\Users\Yarts\Documents\Engine\Framework\Graphics\Inc\BillBoardEffect.h(5,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file 'GameState.cpp')
+  
+  18_Physics.vcxproj -> C:\Users\Yarts\Documents\Engine\x64\Debug\18_Physics.exe

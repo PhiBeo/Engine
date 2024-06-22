@@ -13,6 +13,7 @@ C:\Users\Yarts\Documents\Engine\Framework\Graphics\Src\MeshBuffer.cpp;C:\Users\Y
 C:\Users\Yarts\Documents\Engine\Framework\Graphics\Src\MeshBuilder.cpp;C:\Users\Yarts\Documents\Engine\Framework\Graphics\x64\Debug\MeshBuilder.obj
 C:\Users\Yarts\Documents\Engine\Framework\Graphics\Src\ModelIO.cpp;C:\Users\Yarts\Documents\Engine\Framework\Graphics\x64\Debug\ModelIO.obj
 C:\Users\Yarts\Documents\Engine\Framework\Graphics\Src\ModelManager.cpp;C:\Users\Yarts\Documents\Engine\Framework\Graphics\x64\Debug\ModelManager.obj
+C:\Users\Yarts\Documents\Engine\Framework\Graphics\Src\ParticleSystemEffect.cpp;C:\Users\Yarts\Documents\Engine\Framework\Graphics\x64\Debug\ParticleSystemEffect.obj
 C:\Users\Yarts\Documents\Engine\Framework\Graphics\Src\PixelShader.cpp;C:\Users\Yarts\Documents\Engine\Framework\Graphics\x64\Debug\PixelShader.obj
 C:\Users\Yarts\Documents\Engine\Framework\Graphics\Src\PostProcessingEffect.cpp;C:\Users\Yarts\Documents\Engine\Framework\Graphics\x64\Debug\PostProcessingEffect.obj
 C:\Users\Yarts\Documents\Engine\Framework\Graphics\Src\Precompiled.cpp;C:\Users\Yarts\Documents\Engine\Framework\Graphics\x64\Debug\Precompiled.obj

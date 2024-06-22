@@ -26,7 +26,7 @@ void GameState::Initialize()
 	mCharacterId = ModelManager::Get()->LoadModel("../../Assets/Models/Character/Defeated/Defeated.model");
 	mCharacter = CreateRenderGroup(mCharacterId, &mCharacterAnimator);
 	mCharacterAnimator.Initialize(mCharacterId);
-	//mCharacterAnimator.PlayAnimation(0, true);
+	mCharacterAnimator.PlayAnimation(0, true);
 }
 
 void GameState::Terminate()

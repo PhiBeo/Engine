@@ -6,6 +6,7 @@ using namespace SpringEngine;
 using namespace SpringEngine::Core;
 using namespace SpringEngine::Graphics;
 using namespace SpringEngine::Input;
+using namespace SpringEngine::Physics;
 
 void App::ChangeState(const std::string& stateName)
 {
@@ -26,6 +27,8 @@ void App::Run(const AppConfig& config)
 		config.winHeight
 	);
 
+	PhysicsWorld::Settings physicsSettings;
+
 	auto handle = myWindow.GetWindowHandle();
 	GraphicsSystem::StaticInitialize(handle, false);
 	InputSystem::StaticInitialize(handle);
@@ -33,6 +36,7 @@ void App::Run(const AppConfig& config)
 	SimpleDraw::StaticInitialize(config.debugDrawLimit);
 	TextureManager::StaticInitialize("../../Assets/Textures");
 	ModelManager::StatticInitialize();
+	PhysicsWorld::StaticInitialize(physicsSettings);
 
 	ASSERT(mCurrentState, "App -- no app state found");
 	mCurrentState->Initialize();
@@ -60,6 +64,7 @@ void App::Run(const AppConfig& config)
 		auto deltaTime = TimeUtil::GetDeltaTime();
 		if (deltaTime < 0.5f)
 		{
+			PhysicsWorld::Get()->Update(deltaTime);
 			mCurrentState->Update(deltaTime);
 		}
 
@@ -74,6 +79,7 @@ void App::Run(const AppConfig& config)
 
 	mCurrentState->Terminate();
 
+	PhysicsWorld::StaticTerminate();
 	ModelManager::StaticTerminate();
 	TextureManager::StaticTerminate();
 	SimpleDraw::StaticTerminate();
