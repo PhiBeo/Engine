@@ -1,0 +1,39 @@
+﻿  WinMain.cpp
+C:\Users\LCV2042835\Documents\GitHub\Engine\Framework\Graphics\Inc\BillBoardEffect.h(5,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file 'WinMain.cpp')
+  
+C:\Users\LCV2042835\Documents\GitHub\Engine\External\Bullet\BulletSoftBody\btSoftBody.h(38,50): warning C4305: 'initializing': truncation from 'double' to 'btScalar'
+  (compiling source file 'WinMain.cpp')
+  
+C:\Users\LCV2042835\Documents\GitHub\Engine\External\Bullet\BulletSoftBody\btSoftBody.h(1232,17): warning C4244: 'initializing': conversion from 'double' to 'btScalar', possible loss of data
+  (compiling source file 'WinMain.cpp')
+  
+C:\Users\LCV2042835\Documents\GitHub\Engine\External\Bullet\BulletSoftBody\btSoftBody.h(1357,21): warning C4244: '+=': conversion from 'double' to 'btScalar', possible loss of data
+  (compiling source file 'WinMain.cpp')
+  
+C:\Users\LCV2042835\Documents\GitHub\Engine\External\Bullet\BulletSoftBody\btSoftBody.h(1361,21): warning C4244: 'initializing': conversion from 'double' to 'btScalar', possible loss of data
+  (compiling source file 'WinMain.cpp')
+  
+C:\Users\LCV2042835\Documents\GitHub\Engine\External\Bullet\BulletSoftBody\btSoftBody.h(1385,20): warning C4244: '=': conversion from 'double' to 'btScalar', possible loss of data
+  (compiling source file 'WinMain.cpp')
+  
+C:\Users\LCV2042835\Documents\GitHub\Engine\External\Bullet\BulletSoftBody\btSoftBody.h(1387,23): warning C4244: '=': conversion from 'double' to 'btScalar', possible loss of data
+  (compiling source file 'WinMain.cpp')
+  
+C:\Users\LCV2042835\Documents\GitHub\Engine\Framework\Core\Inc\TypeAllocator.h(31,9): error C2039: 'DataType': is not a member of 'Student'
+  (compiling source file 'WinMain.cpp')
+  C:\Users\LCV2042835\Documents\GitHub\Engine\VGP336\23_HelloMemory\WinMain.cpp(7,7):
+  see declaration of 'Student'
+  C:\Users\LCV2042835\Documents\GitHub\Engine\Framework\Core\Inc\TypeAllocator.h(31,9):
+  the template instantiation context (the oldest one first) is
+  	C:\Users\LCV2042835\Documents\GitHub\Engine\VGP336\23_HelloMemory\WinMain.cpp(27,52):
+  	see reference to class template instantiation 'SpringEngine::Core::TypeAllocator<Student>' being compiled
+  	C:\Users\LCV2042835\Documents\GitHub\Engine\Framework\Core\Inc\TypeAllocator.h(25,8):
+  	while compiling class template member function 'void SpringEngine::Core::TypeAllocator<Student>::Delete(DataType *)'
+          with
+          [
+              DataType=Student
+          ]
+  		C:\Users\LCV2042835\Documents\GitHub\Engine\VGP336\23_HelloMemory\WinMain.cpp(42,21):
+  		see the first reference to 'SpringEngine::Core::TypeAllocator<Student>::Delete' in 'WinMain'
+  
